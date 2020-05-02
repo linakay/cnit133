@@ -21,7 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        function chngClr(){
+        function chng(){
             var mn = document.getElementById('main');
             // var colors = document.getElementsByTagName('clr');
             var colors = document.forms['myform'].elements['clr'].value;
@@ -74,7 +74,7 @@
             <label><input type="radio" name="clr" value="teal"> Teal &nbsp;</label>
             <label><input type="radio" name="clr" value="pink"> Pink &nbsp;</label>
             <label><input type="radio" name="clr" value="white"> White &nbsp;</label><br>
-            <input type="button" value="Submit" onclick="chngClr()">
+            <input type="button" value="Submit" onclick="chng()">
             <input type="reset" name="reset" onclick="rst()"><br>
         </form>
 </body>
