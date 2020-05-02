@@ -12,21 +12,37 @@
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
         .pls { background: #FFFFFF; border: .5px solid #E4E6E8; border-radius: 3px; padding: 2px 5px; }
+        .teal { background: #D4F0F1; }
+        .pink { background: #FFE5E2; }
+        .white { background: #FFFFFF; }
+        .dft { background: #F5FCFD; }
+        input[type$='button'], input[type$='reset'] { background: #55C4CB; color: #FFFFFF; padding: 6px; font-size: 1em; border-radius: 4px; border: none; width: 70px; margin: 0px 10px; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        var mn = document.getElementById('main');
-        function grn() {
+        function chngClr(){
             var mn = document.getElementById('main');
-            mn.style.background="#D4F0F1";
+            // var colors = document.getElementsByTagName('clr');
+            var colors = document.forms['myform'].elements['clr'].value;
+            switch(colors) {
+                case "teal":
+                    mn.className='teal';
+                    break;
+                case "pink":
+                    mn.className='pink';
+                    break;
+                case "white":
+                    mn.className='white';
+                    break;
+                default:
+                    mn.className='dft';
+                    // mn.style.background="rgba(145, 220, 232, 0.05)";
+            }
         }
-        function pnk() {
+        function rst(){
             var mn = document.getElementById('main');
-            mn.style.background="#FFE5E2";
-        }
-        function wht(){
-            document.getElementById('main').style.background="#FFFFFF";
+            mn.className='dft';
         }
     </script>
 </head>
@@ -34,7 +50,7 @@
     <header>
         <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
-        <div class="hdv"><h2>Objects & Events</h2></div>
+        <div class="hdv"><h2>Objects <span class="smhide"><br></span>& Events</h2></div>
         <br>
     </header>
     <nav id="clsnav">
@@ -50,12 +66,16 @@
         <a href="hw7p1.html" class="partActive" >Part 1<br>Options</a>
         <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
         <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model<br>
-            <span style="font-size: .9em; background: none; border: none;">Part 1: User options in jQuery</span></h2>
+            <span style="font-size: .9em; background: none; border: none;">Part 1: Formatting Options</span></h2>
         <!-- <h3 style="color: #A6B8C1;">&#x2719;</h3> -->
         <!-- <button onclick="clr()">&#x2719;</button> -->
-        <p onclick="grn()"><span class="pls" style="color: #D4F0F1;">&#x2719;</span> Click to change the background color to teal</p>
-        <p onclick="pnk()"><span class="pls" style="color: #FFE5E2;">&#x2719;</span> Click to change the background color to coral</p>
-        <p onclick="wht()"><span class="pls" style="color: #C4C6C8;">&#x2719;</span> Click to change the background color to white</p>
-    <!-- </div> -->
+        <form name="myform">
+            <p>Select a background color below:</p>
+            <label><input type="radio" name="clr" value="teal"> Teal &nbsp;</label>
+            <label><input type="radio" name="clr" value="pink"> Pink &nbsp;</label>
+            <label><input type="radio" name="clr" value="white"> White &nbsp;</label><br>
+            <input type="button" value="Submit" onclick="chngClr()">
+            <input type="reset" name="reset" onclick="rst()"><br>
+        </form>
 </body>
 </html>
