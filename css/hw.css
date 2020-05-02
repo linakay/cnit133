@@ -15,12 +15,12 @@ div{
 header{
     padding-top: 1%;
     padding-bottom: 1%;
-    background: #00B7BD;
-    /*background: rgba(0, 183, 189);*/
+    background: #55C4CB;
     text-align: justify-all;
     margin: 0 auto;
     white-space: nowrap;
 }
+header a { color: #FFFFFF; }
 h1{
     text-transform: uppercase;
     text-align: center;
@@ -43,13 +43,12 @@ nav{
     padding-right: 1%;
     text-transform: uppercase;
     font-weight: 100;
-    background: #A4DBE8;
-    background: rgba(164, 219, 232, .5);
+    background: rgba(145, 220, 232, 0.5);
 }
 nav a{
-    color: #05A9C7;
-    background: #FFFFFF;
-    border: 0.5px solid #92949B;
+    /*color: #05A9C7;*/
+    color: #007EA7; background: #FFFFFF;
+    border: 0.5px solid #007EA7;
     border-radius: 5px;
     text-align: center;
     padding: 9% 1.5%;
@@ -64,9 +63,8 @@ nav a:hover{
     background: #98DBCE;
 }
 .active{
-    color: #FFFFFF;
-    background: #00B2A2;
-    background: rgba(0, 178, 162, .5);
+    color: #FFFFFF; background: #00B7BD;
+    border: 0.5px solid #E4E6E8;
 }
 .hdv{
     white-space: nowrap;
@@ -88,10 +86,11 @@ nav a:hover{
 }
 .partLnk{
     color: #003459;
-    border: 1px solid #FFF;
-    background: #BDE9C9;
+    border: 0.5px solid #E4E6E8;
+    background: #A2E4B8;
+    background: rgba(145, 220, 232, 1);
     text-align: center;
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 1%;
     border-radius: 5px;
     width: 8%;
@@ -101,12 +100,11 @@ nav a:hover{
     white-space: nowrap;
 }
 .partActive{
-    color: #003459;
-    border: 1px solid #FFF;
-    background: #A2E4B8;
-    background: rgba(145, 220, 232, 1);
+    color: #FFFFFF;
+    border: 0.5px solid #E4E6E8;
+    background: #05A9C7;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 1%;
     border-radius: 5px;
     width: 8%;
