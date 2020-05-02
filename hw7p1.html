@@ -11,11 +11,23 @@
         /*header img { width: 75%; height: auto; }*/
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
+        .pls { background: #FFFFFF; border: .5px solid #E4E6E8; border-radius: 3px; padding: 2px 5px; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        var mn = document.getElementById('main');
+        function grn() {
+            var mn = document.getElementById('main');
+            mn.style.background="#D4F0F1";
+        }
+        function pnk() {
+            var mn = document.getElementById('main');
+            mn.style.background="#FFE5E2";
+        }
+    </script>
 </head>
-<body>
+<body id="main">
     <header>
         <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
@@ -31,9 +43,15 @@
         <a class="active" href="hw7.html">Homework 7</a>
         <a href="hw8.html">Homework 8</a>
     </nav><br>
-    <a href="hw7p1.html" class="partActive" >Part 1<br>Options</a>
-    <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
-    <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2>
-    <h3 style="color: #003459;">Part 1: User options in jQuery</h3>
+    <!-- <div class="main" id="main"> -->
+        <a href="hw7p1.html" class="partActive" >Part 1<br>Options</a>
+        <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
+        <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model<br>
+            <span style="font-size: .9em; background: none; border: none;">Part 1: User options in jQuery</span></h2>
+        <!-- <h3 style="color: #A6B8C1;">&#x2719;</h3> -->
+        <!-- <button onclick="clr()">&#x2719;</button> -->
+        <p onclick="grn()"><span class="pls" style="color: #D4F0F1;">&#x2719;</span> Click to change the background color to teal</p><br>
+        <p onclick="pnk()"><span class="pls" style="color: #FFE5E2;">&#x2719;</span> Click to change the background color to coral</p>
+    <!-- </div> -->
 </body>
 </html>
