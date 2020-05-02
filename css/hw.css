@@ -51,16 +51,17 @@ nav a{
     border: 0.5px solid #007EA7;
     border-radius: 5px;
     text-align: center;
-    padding: 9% 1.5%;
+    padding: 10% 1.5%;
     display: inline-block;
     width: 98%;
     margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 7%;
+    margin-bottom: 7%;
     white-space: nowrap;
 }
 nav a:hover{
-    background: #98DBCE;
+    color: #FFFFFF; background: #98DBCE;
+    border: 0.5px solid #E4E6E8;
 }
 .active{
     color: #FFFFFF; background: #00B7BD;
