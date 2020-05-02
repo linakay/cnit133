@@ -1,0 +1,20 @@
+input{
+    text-align: center;
+    /*margin: 5px;*/
+    font-size: 1.25rem;
+    width: 12vw;
+    min-width: 70px;
+}
+button{
+    width: 8vw;
+    min-width: 95px;
+    text-align: center;
+    padding: 1%;
+}
+/*input[type=$"reset"]{
+    font-size: 1.25rem;
+    width: 8vw;
+    min-width: 75px;
+    text-align: center;
+    padding: 1%;
+}*/

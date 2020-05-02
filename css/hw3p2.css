@@ -1,0 +1,85 @@
+.container{
+    /*text-align: left;*/
+    text-align: center;
+    margin: 0 auto;
+}
+input{
+    font-size: 105%;
+}
+input[type$="button"]{
+    width: 70px;
+    font-size: 1em;
+}
+input[type$="reset"]{
+    width: 70px;
+    font-size: 1em;
+}
+/*.tooltip {
+    background: #A6B8C1;
+    color: #FFF;
+    text-align: center;
+    padding: 2px;
+    width: 250px;
+    border-radius: 5px;
+}*/
+#qty label{
+    margin: 0 auto;
+    margin-right: 3px;
+}
+#qty input{
+    text-align: center;
+}
+.prc{
+    text-align: right;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*.prc input{
+    text-align: right;
+}*/
+table {
+    margin: 0 auto;
+    max-width: 450px;
+    border-spacing: 0;
+}
+table th{
+    font-weight: 400;
+    text-align: center;
+}
+td:first-child{
+    text-align: center;
+    width: 50px;
+}
+td:nth-child(2){
+    width: 70px;
+}
+td:nth-child(3) input{
+    text-align: center;
+}
+td:last-child input{
+    text-align: right;
+}
+#totamt{
+    text-align: right;
+}
+#totearn{
+    text-align: right;
+}
+#result{
+    color: #AF231C;
+    font-weight: 400;
+}
+#err{
+    color: #AF231C;
+    font-weight: 400;
+}
+#sperr{
+    color: #AF231C;
+    font-weight: 400;
+}
+#totsold{
+    text-align: right;
+}
+#compensation{
+    text-align: right;
+}

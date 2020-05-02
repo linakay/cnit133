@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 4">
+    <meta property="og:image" content="hm.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        *{
+            text-align: center;
+        }
+        button{
+            text-transform: uppercase;
+            width: 140px;
+            padding: 1%;
+            color: #FFFFFF;
+            background: #70CDCC;
+            margin: 2% auto;
+        }
+        #draggable { 
+            width: 520px;
+            padding: 1%;
+            margin: 0% auto;
+            text-align: center; 
+            background: #98DBCE; background: rgba(152, 219, 206, .75); 
+            border: 1px solid #05A9C7; 
+            border-radius: 5px;
+            display: none;}
+        @media screen and (max-width: 799px){
+            #draggable { width: 300px; text-align: justify;}
+            div{
+                font-size: .75em;
+            }
+            p{ text-align: justify; }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#draggable" ).draggable();
+        } );
+    </script>
+    <script src="js/hw4p1.js"></script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <!-- <div class="hdv" style="text-align: left; vertical-align: middle;"><a href="index.html" style="color: #FFF;"><img src="home.svg" style="width: 10%;"></a></div> -->
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2 style="color: #FFF; text-align: right;">Looping Statements</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a class="active" href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <a class="partActive" href='hw4p1.html'>Part 1<br>Math Loops</a>
+    <a class="partLnk" href='hw4p2.html'>Part 2<br>Interest</a>
+    <a class="partLnk" href='hw4p3.html'>Extra<br>Credit</a>
+    <br>
+    <!-- <div style="text-align: center;"> -->
+    <h2>Homework 4 Part 1 – Math with Loops</h2><br>
+    <p>The functions below calculate the sum and product of every fourth integer from 5 through 21 inclusive using a for loop and every third integer from 3 through 21 inclusive using a while loop.</p>
+    <button onclick="forx()" tabindex="1">for loop</button> 
+    <button onclick="frst()" tabindex="2">reset</button><br><br>
+    <div id="draggable">
+        <h3 style="margin: 0% auto; color: #FFF;">Drag me anywhere on the page!</h3>
+        <span id="tot"><br></span><br>
+        <span id="mult"><br></span><br>
+    </div><br><br>
+    <button onclick="whx()" tabindex="3">while loop</button> 
+    <button onclick="wrst()" tabindex="4">reset</button><br><br>
+    <div>
+        <span id="tot2"><br></span><br>
+        <span id="mult2"><br></span><br>
+    </div><br><br>
+    <!-- </div> -->
+</body>
+</html>

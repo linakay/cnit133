@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 3">
+    <title>Homework 3</title>
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <link rel="stylesheet" href="css/hw.css">
+    <link rel="stylesheet" type="text/css" href="css/hw3p2.css">
+    <style>
+        .qty{
+            text-align: center;
+        }
+    </style>
+    <script src="js/hw3p2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $(document).tooltip();
+        });
+        /*$(document).ready(function(){
+            $(function(){
+                $("#spntip").tooltip();
+            });
+        });*/
+    </script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF" ><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Functions</h2></div>
+        <br>
+    </header>
+    <nav>
+        <a href="hw2.html">Homework 2</a>
+        <a class="active" href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <!-- <br>
+    <a class="partLnk" href='hw3p1.html'>Part 1<br>Student Grades</a>
+    <a class="partActive" href='hw3p2.html'>Part 2<br>Sales</a>
+    <a class="partLnk" href='hw3p3.html'>Part 3<br>Temperatures</a>
+    <a class="partLnk" href='hw3p4.html'>Part 4<br>Multiplication</a>
+    <br> -->
+    <h2>Part 2 – Sales Commissions</h2><br>
+    <p>Enter a salesperson's weekly sales for each product below to calculate total base pay plus commission.</p><br>
+    <form name="calcinput">
+        <span id="spntip" title="Please make sure that the salesperson&apos;s name is spelled correctly."><label>Salesperson: </label>
+        <input type="text" name="spname" id="spname" tabindex="1"></span>
+        <p id="sperr"><br></p>
+        <p style="font-weight: 400;">Enter the quantity sold for each product</p>
+        <label>Item 1: </label><input type="number" name="qty1" id="qty1" class="qty" tabindex="2"><br>
+        <label>Item 2: </label><input type="number" name="qty2" id="qty2" class="qty" tabindex="3"><br>
+        <label>Item 3: </label><input type="number" name="qty3" id="qty3" class="qty" tabindex="4"><br>
+        <label>Item 4: </label><input type="number" name="qty4" id="qty4" class="qty" tabindex="5"><br>
+        <input type="button" onclick="calcqty()" value="Submit" tabindex="6">
+        <input type="reset" value="Reset" name="rst" onclick="calcrst()" tabindex="7">
+        <p id="result"><br></p>
+        <table>
+            <tr><th>Item #</th>
+                <th>Price</th>
+                <th>Quantity Sold</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="prc">$ 239.99</td>
+                <td><input type="text" id="num1" size="15" tabindex="8" readonly></td>
+                <td><input type="text" id="tot1" size="15" readonly></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="prc">129.75</td>
+                <td><input type="text" id="num2" size="15" tabindex="9" readonly></td>
+                <td><input type="text" id="tot2" size="15" readonly></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="prc">99.95</td>
+                <td><input type="text" id="num3" size="15" tabindex="10" readonly></td>
+                <td><input type="text" id="tot3" size="15" readonly></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="prc">350.89</td>
+                <td><input type="text" id="num4" size="15" tabindex="11" readonly></td>
+                <td><input type="text" id="tot4" size="15" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: left;">Total Amount Sold: </td>
+                <td id="totsold"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: left;">Total Weekly Earnings: </td>
+                <td id="compensation"></td>
+            </tr>
+        </table>
+        <!-- <input type="button" onclick="calctot()" value="Calculate" tabindex="12">
+        <input type="reset" value="Reset" name="rst" onclick="calcrst()" tabindex="13">
+        <p id="err"></p> -->
+    </form><br>
+</body>
+</html>

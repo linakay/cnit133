@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        *{
+            text-align: center;
+        }
+        .bx{
+            font-size: 2em;
+            font-family: Courier, Monaco, "Lucida Console", monospace;
+            line-height: 60%;
+            color: #00B7BD;
+        }
+        .err{
+            font-size: 1em;
+            font-weight: 400;
+            font-family: sans-serif;
+            line-height: 100%;
+            color: #A2242F;
+        }
+        button{
+            font-size: 1.2em;
+            color: #FFFFFF;
+            border: .5px solid #05A9C7;
+            background: #98DBCE;
+            padding: 1%;
+            width: 140px;
+        }
+        input{
+            font-size: 1.2em;
+            text-align: center;
+            padding: 1%;
+            width: 80px;
+        }
+        #draggable{ display: none; }
+        #dragmsg{ font-size: .85em; color: #A6B8C1; display: none; }
+        @media screen and (max-width: 400px){
+            p{
+                text-align: justify;
+            }
+        }
+    </style>
+    <script src="js/hw4p3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#draggable" ).draggable();
+        } );
+    </script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Looping Statements</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a class="active" href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <a class="partLnk" href='hw4p1.html'>Part 1<br>Math Loops</a>
+    <a class="partLnk" href='hw4p2.html'>Part 2<br>Interest</a>
+    <a class="partActive" href='hw4p3.html'>Extra<br>Credit</a>
+    <br>
+    <h2 style="color: #003459;">Homework 4: Extra Credit</h2>
+    <h3 style="color: #003459;">Nested Loop Box</h3>
+    <p>Enter an integer between 2 and 10 below to specify the length of a box that will print on the screen.</p>
+    <form name="numform" id="numform">
+        <input type="number" min="2" max="10" name="lng" id="lng" tabindex="1"><br>
+    </form><br>
+    <button onclick="prntbx()" id="entr" tabindex="2">Draw Square</button><br><br>
+    <div id="draggable">
+        <!-- <span id=dragmsg>Drag me anywhere on the screen</span> -->
+        <div id="box" class="bx"></div>
+    </div>
+    <br>
+</body>
+</html>

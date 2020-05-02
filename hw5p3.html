@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 5</title>
+    <link rel="stylesheet" href="css/hw5.css">
+    <link rel="stylesheet" href="css/hw5p3.css">
+    <style>
+        *{ text-align: center; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+        var starry = [['AL', 'ALABAMA', 'MONTGOMERY', '4,887,871'],
+            ['AK', 'ALASKA', 'JUNEAU', '737,438'],
+            ['AZ', 'ARIZONA', 'PHOENIX', '7,171,646'],
+            ['AR', 'ARKANSAS', 'LITTLE ROCK', '3,010,825'],
+            ['CA', 'CALIFORNIA', 'SACRAMENTO', '39,557,045'],
+            ['CO', 'COLORADO', 'DENVER', '5,694,564']];
+        var stprop = [['AL', 'Alabama', 'Montgomery', '4,887,871'],
+            ['AK', 'Alaska', 'Juneau', '737,438'],
+            ['AZ', 'Arizona', 'Phoenix', '7,171,646'],
+            ['AR', 'Arkansas', 'Little Rock', '3,010,825'],
+            ['CA', 'California', 'Sacramento', '39,557,045'],
+            ['CO', 'Colorado', 'Denver', '5,694,564']];
+        function stdata() {
+            var searchkey = document.forms["searchform"].elements["state"].value;
+            searchkey = searchkey.toUpperCase();
+            console.log(searchkey);
+            var found = false;
+            for (var row = 0; row < starry.length; row ++) {
+                if ((starry[row][0] == searchkey) || (starry[row][1] == searchkey)) {
+                    /*document.forms["searchform"].elements["abr"] = starry[row][0];
+                    document.forms["searchform"].elements["stname"] = starry[row][1];
+                    document.forms["searchform"].elements["cpt"] = starry[row][2];
+                    document.forms["searchform"].elements["poptn"] = starry[row][3];*/
+                    document.getElementById('rslt').style.display="inline";
+                    document.getElementById('tnk').innerHTML="Thanks for your inquiry, here is the information you requested:"
+                    document.getElementById('abr').innerHTML=stprop[row][0];
+                    document.getElementById('stname').innerHTML=stprop[row][1];
+                    document.getElementById('cpt').innerHTML=stprop[row][2];
+                    document.getElementById('poptn').innerHTML=stprop[row][3];
+                    document.getElementById('err').innerHTML="";
+                    row = starry.length;
+                    found = true;
+                }
+            }
+            console.log(found);
+            if (found==false) {
+                document.getElementById('err').innerHTML="Please enter the name or abbreviation of a state listed above.";
+                document.getElementById('abr').innerHTML="";
+                document.getElementById('stname').innerHTML="";
+                document.getElementById('cpt').innerHTML="";
+                document.getElementById('poptn').innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hdv"><a href="index.html" style="color: #FFFFFF; line-height: 80%;"><figure><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Arrays</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a><br>
+        <a href="hw3.html">Homework 3</a><br>
+        <a href="hw4.html">Homework 4</a><br>
+        <a class="active" href="hw5.html">Homework 5</a><br>
+        <a href="hw6.html">Homework 6</a><br>
+        <a href="hw7.html">Homework 7</a><br>
+        <a href="hw8.html">Homework 8</a><br>
+    </nav>
+    <br>
+    <a href="hw5p1.html" class="partLnk">Part 1<br>Form<span class="smhide"> Validation</span></a>
+    <a href="hw5p2.html" class="partLnk">Part 2<br><span class="smhide">Pulldown </span>Menu</a>
+    <a href="hw5p3.html" class="partActive">Part 3<br>Census<span class="smhide"> Data</span></a><br><br>
+    <h2>CNIT 133 Homework 5 – Arrays</h2><br>
+    Select a state from the table below to retrieve summary statistics from the 2018 U.S. Census.<br><br>
+    <form name="searchform">
+        Search state: &nbsp;
+        <input type="text" name="state" autofocus> &nbsp;
+        <input type="button" onclick="stdata();" name="search" id="search" value="Submit for state info"><br><br>
+        <table id="rawtbl">
+            <tr><th>Abbr</th>
+                <th>State</th>
+                <th>Capital</th>
+                <th>Population</th></tr>
+            <tr>
+                <td>AL</td>
+                <td>Alabama</td>
+                <td>Montgomery</td>
+                <td>4,887,871</td>
+            </tr>
+            <tr>
+                <td>AK</td>
+                <td>Alaska</td>
+                <td>Juneau</td>
+                <td>737,438</td>
+            </tr>
+            <tr>
+                <td>AZ</td>
+                <td>Arizona</td>
+                <td>Phoenix</td>
+                <td>7,171,646</td>
+            </tr>
+            <tr>
+                <td>AR</td>
+                <td>Arkansas</td>
+                <td>Little Rock</td>
+                <td>3,010,825</td>
+            </tr>
+            <tr>
+                <td>CA</td>
+                <td>California</td>
+                <td>Sacramento</td>
+                <td>39,557,045</td>
+            </tr>
+            <tr>
+                <td>CO</td>
+                <td>Colorado</td>
+                <td>Denver</td>
+                <td>5,694,564</td>
+            </tr>
+        </table><br><br>
+        <span id="tnk"><br></span><br><br>
+        <table id="rslt">
+            <tr>
+                <td>Abbr: </td>
+                <td id="abr"></td>
+            </tr>
+            <tr>
+                <td>State: </td>
+                <td id="stname"></td>
+            </tr>
+            <tr>
+                <td>Capital: </td>
+                <td id="cpt"></td>
+            </tr>
+            <tr>
+                <td>Population: </td>
+                <td id="poptn"></td>
+            </tr>
+        </table>
+    </form><br><br>
+    <span id="err" class="error"></span>
+</body>
+</html>

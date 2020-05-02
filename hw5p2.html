@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 5</title>
+    <style>
+        select { font-size: 1em; }
+    </style>
+    <link rel="stylesheet" href="css/hw5.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+        function loadPg(form) {
+            var mydest = form.destList.options[myForm.destList.selectedIndex].value;
+            window.location = mydest;
+        }
+        function clkPg(form) {
+            var mydest = form.siteList.options[myForm.siteList.selectedIndex].value;
+            window.location = mydest;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hdv"><a href="index.html" style="color: #FFFFFF; line-height: 80%;"><figure><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Arrays</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a><br>
+        <a href="hw3.html">Homework 3</a><br>
+        <a href="hw4.html">Homework 4</a><br>
+        <a class="active" href="hw5.html">Homework 5</a><br>
+        <a href="hw6.html">Homework 6</a><br>
+        <a href="hw7.html">Homework 7</a><br>
+        <a href="hw8.html">Homework 8</a><br>
+    </nav>
+    <br>
+    <a href="hw5p1.html" class="partLnk">Part 1<br>Form<span class="smhide"> Validation</span></a>
+    <a href="hw5p2.html" class="partActive">Part 2<br><span class="smhide">Pulldown </span>Menu</a>
+    <a href="hw5p3.html" class="partLnk">Part 3<br>Census<span class="smhide"> Data</span></a><br><br>
+    <h2>Homework 5 — Arrays Part 2: Pulldown Menus</h2>
+    <form name="myForm">
+        <span>This homework assignment consists of three parts. <br>
+        Select the page that you would like to load below.</span><br><br>
+        <select name="destList" onchange="loadPg(this.form);">
+            <option>Select assignment</option>
+            <option value="hw5p1.html">Part 1: Form Validation</option>
+            <option value="hw5p2.html">Part 2: Pulldown Menus</option>
+            <option value="hw5p3.html">Part 3: Census Data</option>
+        </select><br><br><br>
+    <!-- </form>
+    <form name="myForm"> -->
+        <span>Select your favorite website of the options below. <br>Click "go" to navigate to the selected page.</span><br><br>
+        <select name="siteList">
+            <option>Pick your favorite site</option>
+            <option value="http://www.google.com/">Google</option>
+            <option value="http://www.twitch.com/">Twitch</option>
+            <option value="http://www.bungie.net/">Bungie</option>
+        </select><br><br>
+        <input type="button" value="Go" onclick="clkPg(this.form);">
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+table{
+    border: 1px solid #00859B;
+    border-spacing: 0;
+    margin: 0 auto;
+    width: 400px;
+}
+table th{
+    height: 30px;
+    text-align: center;
+    color: #FFF;
+    background: #05A9C7;
+    border: 0.25px solid #D9D9D6;
+    border: 0.25px solid rgba(217, 217, 214, 0.5);
+}
+table td{
+    height: 30px;
+    background: #D0D3D4;
+    background: rgba(208, 211, 212, .25);
+    border: 1px solid #FFF;
+    text-align: right;
+    width: 125px;
+}
+td:last-child{
+    width: 125px;
+}
+td:first-child{
+    text-align: left;
+    padding-left: 1%;
+    width: 50%;
+    min-width: 150px;
+}
+input{
+    text-align: center;
+    /*box-sizing: border-box;*/
+}

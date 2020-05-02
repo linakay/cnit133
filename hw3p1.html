@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 3">
+    <title>Homework 3</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        p{
+            font-weight: 400;
+        }
+        .container {
+            width: 200px;
+            text-align: left;
+            padding: 0%;
+            margin: 0 auto;
+        }
+        .container input {
+            text-align: center;
+            float: right;
+            width: 80px;
+            font-size: 1.05rem;
+        }
+        .num{
+            text-align: center;
+        }
+    </style>
+    <script src="js/hw3p1grades.js"></script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF" ><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Functions</h2></div>
+        <br>
+    </header>
+    <nav>
+        <a href="hw2.html">Homework 2</a>
+        <a class="active" href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <br>
+    <a class="partActive" href='hw3p1.html'>Part 1<br>Student Grades</a>
+    <a class="partLnk" href='hw3p2.html'>Part 2<br>Sales</a>
+    <a class="partLnk" href='hw3p3.html'>Part 3<br>Temperatures</a>
+    <a class="partLnk" href='hw3p4.html'>Part 4<br>Multiplication</a>
+    <!-- <br> -->
+    <h2>Part 1 – Student Grades</h2>
+    Enter scores between 0 to 100 points for each category below to calculate the final grade as a weighted average.<br><br>
+    <div class="container">
+        <form name="myform">
+            <label>Homework: </label><input type="number" min="0" max="100" step="0.1" id="num1" name="num1" class="num" tabindex="1"><br><br>
+            <label>Midterm:  </label><input type="number" min="0" max="100" step="0.1" id="num2" name="num2" class="num" tabindex="2"><br><br>
+            <label>Final Exam: </label><input type="number" min="0" max="100" step="0.1" id="num3" name="num3" class="num" tabindex="3"><br><br>
+            <label>Participation: </label><input type="number" min="0" max="100" step="0.1" id="num4" name="num4" class="num" tabindex="4"><br><br>
+        </form>
+    </div>
+    <br>
+    <button onclick="nums()" tabindex="5" style="background: #FFF">Calculate</button><br>
+    <p id="result"></p>
+    <p id="finalGrade"></p>
+</body>
+</html>

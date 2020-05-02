@@ -1,0 +1,46 @@
+form{
+    margin: 0 auto;
+}
+#clc{
+    margin: 0 auto;
+}
+input{
+    font-size: 1.1rem;
+    text-align: center;
+    width: 140px;
+}
+textarea{
+    text-align: center;
+    font-size: 1rem;
+    vertical-align: middle;
+    width: 175px;
+    padding-top: 5px;
+}
+input[type$="button"]{
+    width: 70px;
+    font-size: 1.1rem;
+    color: #007EA7;
+}
+input[type$="reset"]{
+    width: 70px;
+    font-size: 1.1rem;
+    color: #007EA7;
+}
+/*table{
+    text-align: center;
+    margin: 0 auto;
+}
+table th{
+    font-weight: 400;
+}
+table input{
+    text-align: center;
+    font-size: 1em;
+}
+table textarea{
+    text-align: center;
+    font-size: 1rem;
+    vertical-align: middle;
+    width: 125px;
+    padding-top: 5px;
+}*/

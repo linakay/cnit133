@@ -1,0 +1,50 @@
+*{ text-align: center; }
+body { vertical-align: middle; }
+table{
+    margin: 0% auto;
+    text-align: center;
+    border-spacing: 0;
+}
+th { color: #FFFFFF; background: #00859B; padding: 0% 2% 0% 2%;}
+td { padding: 0px 5px 0px 5px; }
+tr:nth-child(odd) { background: #BDE9C9; background: rgba(189, 233, 201, .5); }
+label{ float: left; }
+.rht { float: right; }
+#rawtbl { border: 1px solid #E4E6E8; }
+#rslt { display: none; text-align: left; border-color: #E4E6E8; }
+@media screen and (max-width: 799px) {
+    .hdv{
+        font-size: 1em;
+        width: 45%;
+        /*text-align: center;*/
+    }
+    .hdvm{
+        width: 50%;
+        font-size: .5em;
+        display: none;
+    }
+    #clsnav{
+        font-size: .5em;
+        /*max-width: 20px;*/
+        display: none;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    .partLnk{
+        font-size: .95em;
+        width: 22vw;
+    }
+    .partActive{
+        font-size: .95em;
+        width: 22vw;
+    }
+    .smhide{
+        display: none;
+    }
+    button{
+        font-size: .95em;
+        width: 22vw;
+    }
+
+}

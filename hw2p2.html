@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 2">
+    <title>Homework 2 – Basic Operations</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        .partLnk{
+            width: 10vw;
+            min-width: 120px;
+        }
+        .partActive{
+            width: 10vw;
+            min-width: 120px;
+        }
+        button{
+            font-size: 1.05em;
+            padding: 0.5% 1% 0.5% 1%;
+            border-radius: 5px;
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            align-items: center;
+            color: #007EA7;
+        }
+        input{
+            margin-left: 5px;
+        }
+        #err{
+            color: #AF231C;
+            font-weight: 400;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fadeResult").click(function(){
+                $("p").fadeTo("slow", 0.25);
+            });
+            $("#fadeIn").click(function(){
+                $("p").fadeTo("slow", 1);
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+    </script>
+    <script>
+        function mathOps(){
+            var number1, number2, n1, n2, sum;
+            number1 = document.forms["myform"].elements["num1"].value;
+            number2 = document.forms["myform"].elements["num2"].value;
+            number3 = document.forms["myform"].elements["num3"].value;
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            sum = n1 + n2 + n3;
+            if (Number.isInteger(parseFloat(number1)) && Number.isInteger(parseFloat(number2)) && Number.isInteger(parseFloat(number3))){
+                document.getElementById("err").innerHTML="";
+                document.getElementById("total").innerHTML="The sum is "+sum+".";
+                mu = sum/3;
+                mu = Math.round(mu*1000);
+                mu = mu/1000;
+                document.getElementById("mean").innerHTML="The average is "+mu+".";
+                prod = n1*n2*n3;
+                document.getElementById("product").innerHTML="The product is "+prod+".";
+                document.getElementById("smlg").innerHTML="The minimum and maximum are "+Math.min(n1, n2, n3)+" and "+Math.max(n1, n2, n3)+", respectively.";
+            }
+            else if (isFinite(sum)){
+                document.getElementById("err").innerHTML="Please enter integer values.";
+                document.getElementById("total").innerHTML="";
+                document.getElementById("mean").innerHTML="";
+                document.getElementById("product").innerHTML="";
+                document.getElementById("smlg").innerHTML="";
+            }
+            else{
+                document.getElementById("err").innerHTML="Please enter numerical values.";
+                document.getElementById("total").innerHTML="";
+                document.getElementById("mean").innerHTML="";
+                document.getElementById("product").innerHTML="";
+                document.getElementById("smlg").innerHTML="";
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background:none;">CNIT133 Homework 2</a></h1></div>
+        <div class="hdv"><h2>Basic Operations</h2></div>
+        <br>
+    </header>
+    <nav>
+        <a class="active" href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <a class="partLnk" href='hw2p1.html'>Part 1<br>Colored Pairs</a>
+    <a class="partActive" href='hw2p2.html'>Part 2<br>Simple Math</a>
+    <a class="partLnk" href='hw2p3.html'>Part 3<br>Negative Count</a>
+    <a class="partLnk" href='hw2p4.html'>Extra Credit<br>Exchange Rates</a>
+    <br>
+    <div>
+        <h2>Part 2: Arithmetic Operations</h2>
+        The form below will compute the sum, mean, product, minimum, and maximum of three integers.
+        <form name="myform">
+            <label>Number: </label><input type="text" id="num1" name="num1" style="font-size: 1.05em;"><br>
+            <label>Number: </label><input type="text" id="num2" name="num2" style="font-size: 1.05em;"><br>
+            <label>Number: </label><input type="text" id="num3" name="num3" style="font-size: 1.05em;">
+        </form><br>
+        <button onclick="mathOps()" id="show">Calculate</button>
+        <button id="fadeResult">Click to Fade Results</button>
+        <button id="fadeIn">Click to Show Results</button><br>
+        <div style="text-align: left;">
+            <p id="total"></p>
+            <p id="mean"></p>
+            <p id="product"></p>
+            <p id="smlg"></p>
+            <p id="err"></p>
+        </div><br>
+    </div>
+</body>
+</html>

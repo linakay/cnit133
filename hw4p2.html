@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <link rel="stylesheet" href="css/hw4p2.css">
+    <!-- <script src="js/hw4p2.js"></script> -->
+    <script>
+        function prt(rt) {
+            var pv, tbl;
+            pv=1000;
+            tbl = document.createElement('table');
+            var row = tbl.insertRow(0);
+            row.insertCell(0).outerHTML = "<th>Year</th>";
+            row.insertCell(1).outerHTML = "<th>Amount on Deposit</th>";
+            row.insertCell(2).outerHTML = "<th>Interest Rate</th>";
+            for (var n=1; n<=10; n++){
+                pv*=(1+rt);
+                var fn, r, c;
+                fn = pv.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                r = tbl.insertRow(n);
+                c = r.insertCell(0);
+                c.innerHTML=n;
+                c = r.insertCell(1);
+                c.innerHTML=fn;
+                c = r.insertCell(2);
+                c.innerHTML=rt;
+            }
+            // document.getElementById('addtable').appendChild(tbl);
+            return tbl;
+        }
+        function addtbls() {
+            var cmp5, cmp6, cmp7;
+            cmp5 = prt(0.05);
+            cmp6 = prt(0.06);
+            cmp7 = prt(0.07);
+            document.getElementById('tbl5').appendChild(cmp5);
+            document.getElementById('tbl6').appendChild(cmp6);
+            document.getElementById('tbl7').appendChild(cmp7);
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body onload="addtbls()">
+    <header>
+        <!-- <div class="hdv" style="text-align: left; vertical-align: middle;"><a href="index.html" style="color: #FFF;"><img src="hm.svg" style="width: 10%;"><h2> Lina Kay</h2></a></div> -->
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Looping Statements</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a class="active" href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <a class="partLnk" href='hw4p1.html'>Part 1<br>Math Loops</a>
+    <a class="partActive" href='hw4p2.html'>Part 2<br>Interest</a>
+    <a class="partLnk" href='hw4p3.html'>Extra<br>Credit</a>
+    <br>
+    <h2>Homework 4 Part 2 – Compound Interest</h2>
+    <p>The following tables calculate the future values of $1,000 principal balance compounded annually at 5%, 6%, and 7%, respectively.</p>
+    <div id="tbl5"></div>
+    <div id="tbl6"></div>
+    <div id="tbl7"></div>
+</body>
+</html>

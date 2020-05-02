@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 2">
+    <title>Homework 2 – Basic Operations</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        input{
+            font-size: 1.05em;
+            margin-left: 5px;
+        }
+        #err{
+            color: #AF231C;
+            font-weight: 400;
+        }
+    </style>
+    <script>
+        function nums() {
+            var ct = [0, 0, 0]
+            var number1, number2, number3, number4, number5, n1, n2, n3, n4, n5, sum;
+            number1 = document.forms["myform"].elements["num1"].value;
+            number2 = document.forms["myform"].elements["num2"].value;
+            number3 = document.forms["myform"].elements["num3"].value;
+            number4 = document.forms["myform"].elements["num4"].value;
+            number5 = document.forms["myform"].elements["num5"].value;
+            n1 = parseFloat(number1);
+            n2 = parseFloat(number2);
+            n3 = parseFloat(number3);
+            n4 = parseFloat(number4);
+            n5 = parseFloat(number5);
+            sum = n1 + n2 + n3 + n4 + n5;
+            if (isFinite(sum)) {
+                lst = [n1, n2, n3, n4, n5];
+                lst.forEach(function(x) {
+                    if (x < 0) {
+                        ct[0]++;
+                    }
+                    else if (x > 0) {
+                        ct[2]++;
+                    }
+                    else{
+                        ct[1]++;
+                    }
+                })
+                document.getElementById("err").innerHTML="";
+                document.getElementById("result").innerHTML="There are "+ct[0]+" negative, "+ct[2]+" positive, and "+ct[1]+" zero elements.";
+            }
+            else{
+                document.getElementById("result").innerHTML="";
+                document.getElementById("err").innerHTML="Please enter numerical values.";
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;">
+            <h2><a href="index.html" style="color: #FFF">
+                <i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework 2</a></h1></div>
+        <div class="hdv"><h2>Basic Operations</h2></div>
+        <br>
+    </header>
+    <nav>
+        <a class="active" href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <a class="partLnk" href='hw2p1.html'>Part 1<br>Colored Pairs</a>
+    <a class="partLnk" href='hw2p2.html'>Part 2<br>Simple Math</a>
+    <a class="partActive" href='hw2p3.html'>Part 3<br>Negative Count</a>
+    <a class="partLnk" href='hw2p4.html'>Extra Credit<br>Exchange Rates</a>
+    <br>
+    <h2>Part 3: Counter</h2>
+    <p>Enter five numbers below to find the number of negative, positive, and zero elements.</p>
+        <form name="myform">
+            <label>Number: </label><input type="text" id="num1" name="num1"><br>
+            <label>Number: </label><input type="text" id="num2" name="num2"><br>
+            <label>Number: </label><input type="text" id="num3" name="num3"><br>
+            <label>Number: </label><input type="text" id="num4" name="num4"><br>
+            <label>Number: </label><input type="text" id="num5" name="num5">
+        </form><br>
+        <button onclick="nums()" id="show">Count</button><br>
+        <div style="text-align: left;">
+            <p id="result"></p>
+            <p id="err"></p>
+        </div><br>
+</body>
+</html>

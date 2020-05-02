@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 3">
+    <meta property="og:image" content="HerbPenny.jpg">
+    <title>Homework 3</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <link rel="stylesheet" href="css/hw3p3.css">
+    <script src="js/hw3p3.js"></script>
+    <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF">
+            <i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Functions</h2></div>
+        <br>
+    </header>
+    <nav>
+        <a href="hw2.html">Homework 2</a>
+        <a class="active" href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav>
+    <br>
+    <br>
+    <a class="partLnk" href='hw3p1.html'>Part 1<br>Student Grades</a>
+    <a class="partLnk" href='hw3p2.html'>Part 2<br>Sales</a>
+    <a class="partActive" href='hw3p3.html'>Part 3<br>Temperatures</a>
+    <a class="partLnk" href='hw3p4.html'>Part 4<br>Multiplication</a>
+    <br>
+    <h2>Part 3 – Celsius to Fahrenheit Converter</h2><br>
+    <p>Enter the temperature in Celsius below to convert to Fahrenheit or vice versa.</p>
+    <form name="tmp">
+        <input type="text" name="celfah" tabindex="1"><br><br>
+        <input type="button" onclick="CtoF()" value="&#176;C to &#176;F" name="cf" tabindex="2">
+        <input type="button" onclick="FtoC()" value="&#176;F to &#176;C" name="fc" tabindex="3"><br><br>
+        <textarea id="result" readonly style="text-align: center;"></textarea><br><br>
+        <input type="reset" value="Reset" name="rst" tabindex="4">
+    </form>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 6">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 6</title>
+    <link rel="stylesheet" href="css/hw.css">
+    <style>
+        .hdvm { width: 78%; }
+        .hdv { width: 12%; }
+        input[type$="text"] {
+            font-size: 1.05em;
+            background: #FFFFF1;
+            text-align: center;
+            margin: 5px;
+        }
+        input[type$="button"]{
+            font-size: 1.05em;
+            background: #48C0CA;
+            color: #FFF;
+            border: .5px solid #E4E6E8;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+        input[type$="reset"]{
+            font-size: 1.05em;
+            background: #48C0CA;
+            color: #FFF;
+            border: .5px solid #E4E6E8;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+        table {
+            margin: 0 auto;
+            border-spacing: 0;
+            border: 0.5px solid #D9D9D6;
+            display: none;
+        }
+        td { border: 0.5px solid #E4E6E8; }
+        th { padding: 3px; }
+        /*td:nth-child(odd) { text-align: left; color: #FFF; background: #00637C; }*/
+        th { background: #E4E6E8; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('input[name="phnum"]').mask('(000) 000–0000');
+        });
+        function fmt(){
+            var num = document.forms['myform'].elements['phnum'].value;
+            var phtst = /\(?\d{3}\)?[ .–]\d{3}[ .–]\d{4}/;
+            console.log(num, phtst, num.search(phtst));
+            if (num.search(phtst) == -1) {
+                document.getElementById('output').innerHTML="Please enter a valid U.S. phone number starting with the area code.";
+                document.getElementById('tbl').style.display="none";
+            }
+            else{
+                document.getElementById('output').innerHTML="";
+                document.getElementById('tbl').style.display="inline-block";
+                var ac, p1, p2;
+                ac = num.substring(1, 4);
+                p1 = num.substring(6, 9);
+                p2 = num.substring(10, 14);
+                document.getElementById('area').innerHTML=ac;
+                document.getElementById('pnum1').innerHTML=p1;
+                document.getElementById('pnum2').innerHTML=p2;
+            }
+        }
+        function rst(){
+            document.getElementById('tbl').style.display="none";
+            document.getElementById('output').innerHTML="";
+            document.getElementById('area').innerHTML="";
+            document.getElementById('pnum1').innerHTML="";
+            document.getElementById('pnum2').innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hdv"><a href="index.html" style="color: #FFFFFF; line-height: 80%;"><figure><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Objects</h2></div><br>
+    </header>
+    <nav class="smhide">
+        <a href="hw2.html">Homework 2</a>
+        <a href="hw3.html">Homework 3</a>
+        <a href="hw4.html">Homework 4</a>
+        <a href="hw5.html">Homework 5</a>
+        <a class="active" href="hw6.html">Homework 6</a>
+        <a href="hw7.html">Homework 7</a>
+        <a href="hw8.html">Homework 8</a>
+    </nav><br>
+    <a href="hw6p1.html" class="partLnk">Part 1<br>Math<span class="smhide"> Operations</span></a>
+    <a href="hw6p2.html" class="partLnk">Part 2<br><span class="smhide">Character </span>Count</a>
+    <a href="hw6p3.html" class="partActive">Part 3 <span style="color: #FFF"><!-- &#128222; -->&#9742;</span><br><span class="smhide">Number </span>Format</a><br><br>
+    <h2>CNIT 133 Homework 6 – Objects Part 3: Phone Number Format</h2><br>
+    <p>Enter a (U.S.) phone number below beginning with the area code followed by seven digits.</p>
+    <!-- without spaces, parenthesis, or non-numerical characters -->
+    <form name="myform">
+        <label>Phone Number: </label>
+        <input type="text" name="phnum" autofocus /><br>
+        <input type="button" name="btn" value="Submit" onclick="fmt()">
+        <input type="reset" name="reset" value="Reset" onclick="rst()"><br>
+    </form><br>
+    <output id="output"></output>
+    <table id="tbl">
+        <tr><th> Area code </th>
+            <th> First three digits </th>
+            <th> Last four digits </th>
+        </tr>
+        <tr>
+            <td><output id="area"></output></td>
+            <td><output id="pnum1"></output></td>
+            <td><output id="pnum2"></output></td>
+        </tr>
+    </table>
+</body>
+</html>

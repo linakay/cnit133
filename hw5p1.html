@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CNIT133 Homework 5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
+    <title>Homework 5</title>
+    <style>
+        * { text-align: center; }
+        table { text-align: center; }
+        td:first-child { text-align: left; }
+    </style>
+    <link rel="stylesheet" href="css/hw5.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myform").validate({
+                rules:
+                {
+                    name: { required: true },
+                    bread: { required: true }
+                },
+                messages: {
+                    name: { required: "<br> Please enter your name." }
+                },
+                errorPlacement: function(error, element) {
+                    if (element.is(":radio") || element.is(":checkbox")) {
+                        error.appendTo(element.parent()); }
+                    else { error.insertAfter(element); }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hdv"><a href="index.html" style="color: #FFFFFF; line-height: 80%;"><figure><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a></div>
+        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdv"><h2>Arrays</h2></div>
+        <br>
+    </header>
+    <nav id="clsnav">
+        <a href="hw2.html">Homework 2</a><br>
+        <a href="hw3.html">Homework 3</a><br>
+        <a href="hw4.html">Homework 4</a><br>
+        <a class="active" href="hw5.html">Homework 5</a><br>
+        <a href="hw6.html">Homework 6</a><br>
+        <a href="hw7.html">Homework 7</a><br>
+        <a href="hw8.html">Homework 8</a><br>
+    </nav>
+    <br>
+    <a href="hw5p1.html" class="partActive">Part 1<br>Form<span class="smhide"> Validation</span></a>
+    <a href="hw5p2.html" class="partLnk">Part 2<br><span class="smhide">Pulldown </span>Menu</a>
+    <a href="hw5p3.html" class="partLnk">Part 3<br>Census<span class="smhide"> Data</span></a><br><br>
+    <h2>Homework 5 Arrays — Part 1: Form Validation</h2>
+    <h3>Build your own sandwich!</h3>
+    Please select your order options below. <span class="rq">*</span>Asterisks indicate required fields.<br><br>
+    <form method="post" action="orders.html" id="myform" name="myform">
+        Customer name<span class="rq">* </span> &nbsp;<input type="text" name="name" id="name" size="25" class="required" autofocus><br><br>
+        <table>
+            <tr>
+                <td><label for="bread">Bread</label><span class="rq">* </span> </td>
+                <td>
+                    <select name="bread" id="bread" class="required" style="width: 100%; font-size: 1em;">
+                        <option value="">Please pick one</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="white">White</option>
+                        <option value="sourdough">Sourdough</option>
+                        <option value="protein">No bread</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Meat </label><span class="rq">* </span> </td>
+                <td><input type="radio" name="meat" class="required"><label> Chicken &nbsp;</label><!-- </td>
+                <td> --><input type="radio" name="meat"><label> Ham  &nbsp;</label><!-- </td>
+                <td> --><input type="radio" name="meat"><label> Vegetarian</label><br></td>
+            </tr>
+            <tr>
+                <td>Cheese<span class="rq">*</span>&nbsp;</td>
+                <td><input type="checkbox" id="cheddar" name="cheddar" value="cheddar" class="required"><label> Cheddar &nbsp;</label>
+                    <input type="checkbox" id="brie" name="brie" value="brie"><label> Brie &nbsp;</label>
+                    <input type="checkbox" id="swiss" name="swiss" value="swiss"><label> Swiss &nbsp;</label>
+                    <input type="checkbox" id="nochs" name="nochs" value="nochs"><label> None</label><br></td>
+            </tr>
+        </table><br>
+        <input type="submit" name="submit" id="submit" value="Submit">
+    </form><br>
+</body>
+</html>
