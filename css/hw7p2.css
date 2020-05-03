@@ -9,7 +9,7 @@ body{
     background: #E4E6E8;
     background: rgba(145, 220, 232, 0.05);
     text-align: center;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 div{
     display: inline-block;
@@ -37,13 +37,14 @@ nav{
     width: 100vw;
     vertical-align: middle;
     text-align: center;
-    float: left;
-    padding: 15px;
+    /*float: left;*/
+    padding: 1% 0%;
     text-transform: uppercase;
     font-weight: 100;
     background: rgba(145, 220, 232, 0.5);
 }
-nav li { display: inline-block; }
+nav li { display: inline-block;
+    margin-right: 1%; }
 nav li ul { position: absolute; display: none; width: inherit; }
 /*nav li:hover ul { display: block; }*/
 nav li ul li { display: block; }
@@ -51,10 +52,10 @@ nav a{
     color: #007EA7; background: #FFFFFF;
     border: 0.5px solid #007EA7;
     text-align: center;
-    padding: 10px;
+    padding: 3%;
     display: inline-block;
     width: 12vw;
-    min-width: 50px;
+    /*min-width: 50px;*/
     margin: 0 auto;
 }
 nav a:hover{
@@ -139,6 +140,7 @@ label{
 .container input {
     text-align: center;
 }
+.smshow { display: none; }
 @media screen and (max-width: 720px) {
     .hdv{
         font-size: 1em;
@@ -151,10 +153,15 @@ label{
         display: none;
     }
     #clsnav{
-        font-size: .5em;
+        /*font-size: .5em;*/
+        /*float: left;
+        width: 35vw;
+        height: 100vh;*/
         /*max-width: 20px;*/
-        display: none;
+        /*display: none;*/
     }
+    /*nav li { display: block; }*/
+    /*nav li ul { display: inline-block; }*/
     h2{
         font-size: 1.25em;
     }
@@ -166,9 +173,8 @@ label{
         font-size: .95em;
         width: 23vw;
     }
-    .smhide{
-        display: none;
-    }
+    .smhide { display: none; }
+    .smshow { display: inline-block; }
     button{
         font-size: .95em;
         width: 22vw;
