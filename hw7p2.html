@@ -5,13 +5,38 @@
     <meta name="description" content="CNIT133 Homework 7">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homework 7</title>
-    <link rel="stylesheet" href="css/hw.css">
+    <link rel="stylesheet" href="css/hw7p2.css">
     <style>
         header a { color: #FFFFFF; }
         /*header img { width: 75%; height: auto; }*/
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
+        nav ul li ul.fallback {display:none;}
+        nav ul li:hover ul.fallback {display:block;}
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('nav ul li').hover(
+                function () {
+                    $('ul', this).fadeIn();
+                },
+                function () {
+                    $('ul', this).fadeOut();
+                }
+            );
+        });
+            /*$('nav li ul').hide().removeClass('fallback');
+            $('nav li').hover(
+                function () {
+                    $('ul', this).stop().slideDown(200);
+                },
+                function () {
+                    $('ul', this).stop().slideUp(200);
+                }
+            );
+        });*/
+    </script>
 </head>
 <body>
     <header>
@@ -21,13 +46,48 @@
         <br>
     </header>
     <nav id="clsnav">
-        <a href="hw2.html">Homework 2</a>
-        <a href="hw3.html">Homework 3</a>
-        <a href="hw4.html">Homework 4</a>
-        <a href="hw5.html">Homework 5</a>
-        <a href="hw6.html">Homework 6</a>
-        <a class="active" href="hw7.html">Homework 7</a>
-        <a href="hw8.html">Homework 8</a>
+        <ul>
+            <li><a href="hw2.html">HW 2</a>
+                <!-- <ul class="fallback"> -->
+                <ul>
+                    <li><a href="hw2p1.html">HW 2 part 1</a></li>
+                    <li><a href="hw2p2.html">HW 2 part 2</a></li>
+                    <li><a href="hw2p3.html">HW 2 part 3</a></li>
+                    <li><a href="hw2p4.html">HW 2 part 4</a></li>
+                </ul>
+            </li>
+            <li><a href="hw3.html">HW 3</a>
+                <ul>
+                    <li><a href="hw3p1.html">HW 3 part 1</a></li>
+                    <li><a href="hw3p2.html">HW 3 part 2</a></li>
+                    <li><a href="hw3p3.html">HW 3 part 3</a></li>
+                    <li><a href="hw3p4.html">HW 3 part 4</a></li>
+                </ul>
+            </li>
+            <li><a href="hw4.html">HW 4</a>
+                <ul>
+                    <li><a href="hw4p1.html">HW 4 part 1</a></li>
+                    <li><a href="hw4p2.html">HW 4 part 2</a></li>
+                    <li><a href="hw4p3.html">HW 4 part 3</a></li>
+                </ul>
+            </li>
+            <li><a href="hw5.html">HW 5</a>
+                <ul>
+                    <li><a href="hw5p1.html">HW 5 part 1</a></li>
+                    <li><a href="hw5p2.html">HW 5 part 2</a></li>
+                    <li><a href="hw5p3.html">HW 5 part 3</a></li>
+                </ul>
+            </li>
+            <li><a href="hw6.html">HW 6</a>
+                <ul>
+                    <li><a href="hw6p1.html">HW 6 part 1</a></li>
+                    <li><a href="hw6p2.html">HW 6 part 2</a></li>
+                    <li><a href="hw6p3.html">HW 6 part 3</a></li>
+                </ul>
+            </li>
+            <li><a class="active" href="hw7.html">HW 7</a></li>
+            <li><a href="hw8.html">HW 8</a></li>
+        </ul>
     </nav><br>
     <a href="hw7p1.html" class="partLnk">Part 1<br>Options</a>
     <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
