@@ -6,44 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homework 7</title>
     <link rel="stylesheet" href="css/hw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Grand+Hotel&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
         header a { color: #FFFFFF; }
-        /*header img { width: 75%; height: auto; }*/
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
-        .pls { background: #FFFFFF; border: .5px solid #E4E6E8; border-radius: 3px; padding: 2px 5px; }
-        .teal { background: #D4F0F1; }
-        .pink { background: #FFE5E2; }
-        .white { background: #FFFFFF; }
-        .dft { background: #F5FCFD; }
-        input[type$='button'], input[type$='reset'] { background: #55C4CB; color: #FFFFFF; padding: 6px; font-size: 1em; border-radius: 4px; border: none; width: 70px; margin: 0px 10px; }
+        .partActive { width: 150px; }
+        /*.partLnk:hoover { color: #FFFFFF; border: 0.5px solid #E4E6E8; background: #05A9C7; }*/
+        table { text-align: left; margin: 0 auto; }
+        th { text-align: center; font-size: 1.05em; font-weight: 500; }
+        tr { vertical-align: top; }
+        button, input[type$='button'], input[type$='reset'] { text-align: center; border: .5px solid #55C4CB; color: #003459; padding: 4px; font-size: 1em; border-radius: 3px; width: 75px; margin: 0px 10px; }
+        input[type$='reset'] { background: #55C4CB; color: FFFFFF; }
+        select { font-size: 1.05em; margin: 0px 10px; }
+        #dls { font-family: 'Delius', 'Comic Sans MS', sans-serif; }
+        #ght { font-family: 'Grand Hotel', cursive; }
+        #wc { width: 300px; margin: 0 auto; padding: 2%; text-align: justify; white-space: nowrap; }
+        #clsnav { display: none; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        function chng(){
-            var mn = document.getElementById('main');
-            // var colors = document.getElementsByTagName('clr');
-            var colors = document.forms['myform'].elements['clr'].value;
-            switch(colors) {
-                case "teal":
-                    mn.className='teal';
-                    break;
-                case "pink":
-                    mn.className='pink';
-                    break;
-                case "white":
-                    mn.className='white';
-                    break;
-                default:
-                    mn.className='dft';
-                    // mn.style.background="rgba(145, 220, 232, 0.05)";
-            }
-        }
-        function rst(){
-            var mn = document.getElementById('main');
-            mn.className='dft';
-        }
+        $(document).ready(function(){
+            $("#tbl :radio").click(function () {
+                $("#wc").css($(this).attr("name"), $(this).val());
+            });
+            $("#tbl :button").click(function () { $("#wc").css($(this).attr("name"), $(this).val()); });
+            $("#fontSize").change(function () {
+                $("#wc").css($(this).attr("name"), $(this).val());
+            });
+            /*$(".fontFamily").change(function() {
+                $("#wc").css($(this).attr("name"), $(this).val());
+            });*/
+            // $("#tbl :checkbox").change(function () { $("#wc").css($(this).attr("name"), this.checked ? $(this).val() : ""); });
+            $("#reset").click(function () {
+                $("p").css("font-family", "sans-serif");
+                $("p").css("font-size", "100%");
+                $("p").css("background-color", "#F5FCFD");
+            });
+        });
     </script>
 </head>
 <body id="main">
@@ -64,18 +65,52 @@
     </nav><br>
     <!-- <div class="main" id="main"> -->
         <a href="hw7p1.html" class="partActive" >Part 1<br>Options</a>
-        <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
-        <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model<br>
-            <span style="font-size: .9em; background: none; border: none;">Part 1: Formatting Options</span></h2>
-        <!-- <h3 style="color: #A6B8C1;">&#x2719;</h3> -->
-        <!-- <button onclick="clr()">&#x2719;</button> -->
+        <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
+        <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><h3>Part 1: Formatting Options</h3>
         <form name="myform">
-            <p>Select a background color below:</p>
-            <label><input type="radio" name="clr" value="teal"> Teal &nbsp;</label>
-            <label><input type="radio" name="clr" value="pink"> Pink &nbsp;</label>
-            <label><input type="radio" name="clr" value="white"> White &nbsp;</label><br>
-            <input type="button" value="Submit" onclick="chng()">
-            <input type="reset" name="reset" onclick="rst()"><br>
+            <label>Select from the following options to change the properties of the paragraph below.</label>
+            <table id="tbl">
+                <tr>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <th>Font</th>
+                </tr>
+                <tr>
+                    <td><br><label><input type="radio" name="background-color" id="teal" value="#D4F0F1"> Teal &nbsp;</label><br><br>
+                    <label><input type="radio" name="background-color" id="pink" value="#FFE5E2"> Pink &nbsp;</label><br><br>
+                    <label><input type="radio" name="background-color" id="white" value="#FFFFFF"> White &nbsp;</label><br><br>
+                    <label><input type="radio" name="background-color" id="dft" value="#F5FCFD"> Default &nbsp;</label></td>
+                    <td >
+                        <select name="font-size" id="fontSize" size="7">
+                            <option value="80%">80%</option>
+                            <option value="90%">90%</option>
+                            <option value="100%">100%</option>
+                            <option value="110%">110%</option>
+                            <option value="120%">120%</option>
+                            <option value="130%">130%</option>
+                            <option value="" selected>Default</option>
+                        </select>
+                    </td>
+                    <td>
+                        <br><input type="button" name="font-family" value="Delius" id="dls" class="ffy"><br><br>
+                        <input type="button" name="font-family" value="Grand Hotel" id="ght" class="ffy"><br><br>
+                        <input type="reset" name="reset" value="Reset all" id="reset" style="color: FFFFFF;">
+                        <!-- <button type="button" id="reset">Reset</button> -->
+                    </td>
+                </tr>
+            </table><br>
+            <p id="wc">"We shall go on to the end...<br>
+                We shall fight on the seas and oceans, <br>
+                We shall fight with growing confidence <br>
+                and growing strength in the air, <br>
+                We shall defend our island, <br>
+                whatever the cost may be. <br>
+                We shall fight on the beaches, <br>
+                We shall fight on the landing grounds, <br>
+                We shall fight in the fields and in the streets, <br>
+                we shall fight in the hills;<br>
+                We shall never surrender"<br>
+                &nbsp; — Winston Churchill, June 4, 1940</p>
         </form>
 </body>
 </html>
