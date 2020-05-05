@@ -92,8 +92,7 @@ nav a:hover{
     font-size: 1.1em;
     padding: 1%;
     border-radius: 5px;
-    width: 8%;
-    width: 15vw;
+    width: 20vw;
     margin: 1%;
     display: inline-block;
     white-space: nowrap;
@@ -106,8 +105,7 @@ nav a:hover{
     font-size: 1.1em;
     padding: 1%;
     border-radius: 5px;
-    width: 8%;
-    width: 15vw;
+    width: 20vw;
     margin: 1%;
     display: inline-block;
     white-space: nowrap;
@@ -166,11 +164,12 @@ label{
     }
     .partLnk{
         font-size: .95em;
-        width: 23vw;
+        width: 30vw;
     }
     .partActive{
         font-size: .95em;
-        width: 23vw;
+        width: 30vw;
+        min-width: 150px;
     }
     .smhide { display: none; }
     .smshow { display: inline-block; }

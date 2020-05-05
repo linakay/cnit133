@@ -7,17 +7,53 @@
     <title>Homework 7</title>
     <link rel="stylesheet" href="css/hw.css">
     <style>
+        * { margin: 0 auto; padding: 0; }
+        header { width: 110vw; }
         header a { color: #FFFFFF; }
-        /*header img { width: 75%; height: auto; }*/
-        .hdvm { width: 78%; }
+        .hdvm { width: 70%; }
         .hdv { width: 12%; }
+        .partLnk { width: 150px; }
+        .partActive { width: 150px; }
+        .wrp { width: 40vw; display: inline-block; vertical-align: top; }
+        h3 {
+        width: 100%;
+            text-align: left;
+            color: #003459;
+            background: #A2E4B8;
+            background: rgba(145, 220, 232, 1);
+            font-size: 1.1em;
+            white-space: nowrap;
+            background: url(add.svg) no-repeat 0 10px;
+            padding: 10px 0 0 25px;
+            cursor: pointer;
+        }
+        h3.close {
+            background-image: url(clear.svg);
+        }
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dsc').hide();
+            $('.main h3').click(function() {
+                var $dsc = $(this).next('.dsc');
+                if($dsc.is(':hidden')){
+                    $dsc.fadeIn();
+                    $(this).addClass('close');
+                } else {
+                    $dsc.fadeOut();
+                    $(this).removeClass('close');
+                }
+            }); // end click
+        });
+    </script>
 </head>
 <body>
     <header>
         <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
-        <div class="hdv"><h2>Objects & Events</h2></div>
+        <div class="hdv" style="text-align: right;"><h2>Objects & Events</h2></div>
         <br>
     </header>
     <nav id="clsnav">
@@ -29,8 +65,24 @@
         <a class="active" href="hw7.html">Homework 7</a>
         <a href="hw8.html">Homework 8</a>
     </nav><br>
-    <a href="hw7p1.html" class="partLnk">Part 1<br>Options</a>
-    <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
-    <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><br>
+    <br><h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><br>
+    <div class="wrp">
+        <div class="main">
+            <h3>Part 1</h3>
+            <div class="dsc">
+                <a href="hw7p1.html" class="partActive">Part 1<br><span class="smhide">Formatting </span>Options</a><br>
+                <p>Allows users to change formatting styles using jQuery</p>
+            </div>
+        </div>
+    </div>
+    <div class="wrp">
+        <div class="main">
+            <h3>Part 2</h3>
+            <div class="dsc">
+                <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
+                <p>Navigation bar with dropdown links to each homework problem</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -141,6 +141,7 @@ label{
 .container input {
     text-align: center;
 }
+.smshow { display: none; }
 @media screen and (max-width: 720px) {
     .hdv{
         font-size: 1em;
@@ -168,9 +169,8 @@ label{
         font-size: .95em;
         width: 23vw;
     }
-    .smhide{
-        display: none;
-    }
+    .smhide { display: none; }
+    .smshow { display: inline-block; }
     button{
         font-size: .95em;
         width: 22vw;

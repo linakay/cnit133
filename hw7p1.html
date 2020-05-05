@@ -21,13 +21,14 @@
         select { font-size: 1.05em; margin: 0px 10px; }
         #dls { font-family: 'Delius', 'Comic Sans MS', sans-serif; }
         #ght { font-family: 'Grand Hotel', cursive; }
-        #wc { width: 300px; margin: 0 auto; padding: 2%; text-align: justify; white-space: nowrap; }
+        #wc { width: 400px; border: 2px solid #92949B; margin: 0 auto; padding: 2%; text-align: justify; white-space: nowrap; }
         #clsnav { display: none; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function(){
+
             $("#tbl :radio").click(function () {
                 $("#wc").css($(this).attr("name"), $(this).val());
             });
@@ -35,10 +36,6 @@
             $("#fontSize").change(function () {
                 $("#wc").css($(this).attr("name"), $(this).val());
             });
-            /*$(".fontFamily").change(function() {
-                $("#wc").css($(this).attr("name"), $(this).val());
-            });*/
-            // $("#tbl :checkbox").change(function () { $("#wc").css($(this).attr("name"), this.checked ? $(this).val() : ""); });
             $("#reset").click(function () {
                 $("p").css("font-family", "sans-serif");
                 $("p").css("font-size", "100%");
@@ -64,8 +61,8 @@
         <a href="hw8.html">Homework 8</a>
     </nav><br>
     <!-- <div class="main" id="main"> -->
-        <a href="hw7p1.html" class="partActive" >Part 1<br>Options</a>
-        <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
+        <a href="hw7.html" class="partActive" >Homework 7</a>
+        <!-- <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br> -->
         <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><h3>Part 1: Formatting Options</h3>
         <form name="myform">
             <label>Select from the following options to change the properties of the paragraph below.</label>
@@ -81,18 +78,17 @@
                     <label><input type="radio" name="background-color" id="white" value="#FFFFFF"> White &nbsp;</label><br><br>
                     <label><input type="radio" name="background-color" id="dft" value="#F5FCFD"> Default &nbsp;</label></td>
                     <td >
-                        <select name="font-size" id="fontSize" size="7">
+                        <select name="font-size" id="fontSize" size="6">
                             <option value="80%">80%</option>
                             <option value="90%">90%</option>
                             <option value="100%">100%</option>
                             <option value="110%">110%</option>
                             <option value="120%">120%</option>
-                            <option value="130%">130%</option>
                             <option value="" selected>Default</option>
                         </select>
                     </td>
                     <td>
-                        <br><input type="button" name="font-family" value="Delius" id="dls" class="fontFamily"><br><br>
+                        <input type="button" name="font-family" value="Delius" id="dls" class="fontFamily"><br><br>
                         <input type="button" name="font-family" value="Grand Hotel" id="ght" class="fontFamily"><br><br>
                         <input type="reset" name="reset" value="Reset all" id="reset" style="color: FFFFFF;">
                         <!-- <button type="button" id="reset">Reset</button> -->
