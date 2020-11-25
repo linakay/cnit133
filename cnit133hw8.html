@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Google Geocoding API</title>
+    <style type="text/css">
+        *{
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 1.1em;
+        }
+        header {
+            text-align: center;
+            background-color: #fdfdfd;
+            border-bottom: 1px solid #e5e2e0;
+        }
+        #container {
+            width: 80%;
+            min-width: 800px;
+            margin: 0px auto;
+        }
+        #container h2 {
+            text-align:center;
+            font-style:italic;
+        }
+        input[type='text'] {
+            height: 1.7em;
+            font-size: 1.2em;
+            width: 50%;
+            padding: 5px;
+        }
+        .search {
+            text-align: center;
+            margin: 50px auto;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('keypress', '#dest', function(event) {
+                if (event.which === 13) { // checking if the ENTER key was pressed
+                    var input = $(this);
+                    var dest = input.val();
+                    // dest = dest.split('+');
+                    console.log('dest was: ' + dest);
+                    getDestInfo(dest);
+                }
+            });
+        });
+        function getDestInfo(dest) {
+        // var url = 'https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=' + dest + '&key=MW9S-E7SL-26DU-VV8V&json=y';
+            // var url = 'https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=' + dest + '&json=y';
+            var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + dest + '&key=AIzaSyAmggGFrGZiasEJapNYKVtt8b3aKh4W1E8';
+            // var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + dest + '&key=AIzaSyCdWjAp3vWbywphoMg2s3RknMY-oSFBmRM';
+            var xmlhttp = new XMLHttpRequest();
+        // the false below is to run the request synchronously otherwise you would write true to run it asynchronously - the last method is better in terms of performance
+            xmlhttp.open('GET', url, false); // doing a get and the URL will be the URL above + username attached to the end of the URL
+            xmlhttp.send();
+            var data = xmlhttp.responseText; // data will receive the response from the request
+            console.log(data); // the previous line and this line are only to debug the program and make sure that we are receiving data!
+            showDest(xmlhttp);
+        // return xmlhttp;
+        }
+        function showDest(xmlhttp) {
+            if(xmlhttp.status === 200) { // testing if the request was successful
+        // show the dest information
+                var json = xmlhttp.responseText; // the responseText is where the data is stored 
+                var dest = JSON.parse(json); // here we are turning the string JSON into a native JavaScript object
+                var rslt = dest['results'][0];
+                var lat = dest['results'][0]['geometry']['location']['lat'];
+                var lng = dest['results'][0]['geometry']['location']['lng'];
+                var location = dest['results'][0]['formatted_address'];
+                var addr = rslt['address_components'];
+                var nat = addr[-1];
+                var main = addr[0];
+                var desc = main['types'];
+                var destinfo = "Description: " + desc + "<br>";
+                console.log(dest, rslt, addr, nat, main, desc);
+                document.getElementById('dest_info').innerHTML = destinfo;
+                // document.getElementById('dest_info').innerHTML = "<h2>" + destinfo.name + "</h2><p><strong>Information:</strong><br>Address: " + destinfo.address + "<br>City: " + destinfo.city + "<br>Zip Code: " + destinfo.zipcode + "</p>";
+            } else {
+                document.getElementById('dest_info').innerHTML = "<h2>Error!!!</h2><p>The dest requested does not exist or there was an error when getting the data"; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <header><h1>Google Geocoding API</h1></header>
+    <div id="container">
+    <p style="font-weight:bold; text-align:center; font-size: 1.3em;">Enter a location below:</p>
+        <div class="search">
+            <input id="dest" placeholder="location" type="text" autofocus></input>
+        </div>
+        <div id="dest_info"></div>
+    </div>
+</body>
+</html>

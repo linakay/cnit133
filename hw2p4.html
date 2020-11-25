@@ -2,11 +2,13 @@
 <html lang = "en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="CNIT133 Homework 2">
     <title>Homework 2 – Basic Operations</title>
-    <link rel="stylesheet" href="css/hw.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/hw.css">
     <style>
+        * { margin: 0 auto; padding: 0; }
         body{
             color: #003459;
             text-align: center;
@@ -18,14 +20,18 @@
         }
         input{
             font-size: 1.1em;
+            float: right;
         }
-        div{
-            width: 400px;
+        form{
+            width: 350px;
             margin: 0 auto;
+            text-align: right;
+            white-space: nowrap;
         }
         strong{
             font-weight: bold;
         }
+        .hdv { line-height: 70px; text-align: center; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
@@ -92,14 +98,13 @@
 </head>
 <body>
     <header>
-        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
+        <div class="hdv"<a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> </a></div>
 
-        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework 2</a></h1></div>
+        <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework 2</a></h1></div>
         
         <div class="hdv"><h2>Basic Operations</h2></div>
-        <br>
     </header>
-    <nav>
+    <nav class="smhide">
         <a class="active" href="hw2.html">Homework 2</a>
         <a href="hw3.html">Homework 3</a>
         <a href="hw4.html">Homework 4</a>
@@ -112,7 +117,7 @@
     <a class="partLnk" href='hw2p1.html'>Part 1<br>Colored Pairs</a>
     <a class="partLnk" href='hw2p2.html'>Part 2<br>Simple Math</a>
     <a class="partLnk" href='hw2p3.html'>Part 3<br>Negative Count</a>
-    <a class="partActive" href='hw2p4.html'>Extra Credit<br>Exchange Rates</a>
+    <a class="partActive smhide" href='hw2p4.html'>Extra Credit<br>Exchange Rates</a>
     <h2>Extra Credit: Foreign Exchange Rates</h2>
     <p id="panel">The foreign currency exchange rates (with respect to the U.S. Dollar) in July 2019
         <br>
@@ -150,12 +155,11 @@
             <td><span id="mxn"></span></td>
         </tr>
     </table>
-    <div>
         <form name="USDform">
             <label style="font-weight: bold; float: left;">Enter amount of U.S. Dollars  </label>
             <input type="text" id="USD" name="USD" style="max-width: 120px; float: right;">
         </form>
-    </div><br>
+    <br><br>
     <button onclick="frx()" style="max-width: 120px;">Calculate</button><br>
     <p id="err" style="color: #AF231C; font-weight: 400;"></p>
 </body>

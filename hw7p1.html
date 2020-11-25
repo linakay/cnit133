@@ -8,27 +8,37 @@
     <link rel="stylesheet" href="css/hw.css">
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Grand+Hotel&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
+        * { margin: 0 auto; padding: 0; }
+        header { height: 70px; text-align: center; }
         header a { color: #FFFFFF; }
+        figcaption { line-height: 70%; }
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
+        .hdv:first-child { float: left; margin-left: 5px; line-height: 70%; }
+        .hdv:last-child { right: 5px; height: 70px; line-height: 70px; text-align: center; }
+        .partLnk { width: 150px; }
         .partActive { width: 150px; }
         /*.partLnk:hoover { color: #FFFFFF; border: 0.5px solid #E4E6E8; background: #05A9C7; }*/
         table { text-align: left; margin: 0 auto; }
         th { text-align: center; font-size: 1.05em; font-weight: 500; }
         tr { vertical-align: top; }
-        button, input[type$='button'], input[type$='reset'] { text-align: center; border: .5px solid #55C4CB; color: #003459; padding: 4px; font-size: 1em; border-radius: 3px; width: 75px; margin: 0px 10px; }
-        input[type$='reset'] { background: #55C4CB; color: FFFFFF; }
-        select { font-size: 1.05em; margin: 0px 10px; }
-        #dls { font-family: 'Delius', 'Comic Sans MS', sans-serif; }
-        #ght { font-family: 'Grand Hotel', cursive; }
-        #wc { width: 400px; border: 2px solid #92949B; margin: 0 auto; padding: 2%; text-align: justify; white-space: nowrap; }
+        button, input[type$='button'], input[type$='reset'] { text-align: center; border: .5px solid #55C4CB; color: #003459; padding: 4px; border-radius: 2px; width: 85px; height: 30px; margin: 0px 10px; }
+        input[type$='reset'] { background: #55C4CB; color: #FFFFFF; font-size: .95em; }
+        select { font-size: 1em; margin: 0px 7px; }
+        #dls { font-family: 'Delius', 'Comic Sans MS', sans-serif; font-size: 1em; }
+        #ght { font-family: 'Grand Hotel', cursive; font-size: .9em; }
+        #wc { width: 400px; border: 2px solid #92949B; margin: 0 auto; padding: 2.5%; text-align: justify; white-space: nowrap; }
         #clsnav { display: none; }
+        @media screen and (max-width: 720px) {
+            .hdv:last-child { width: 60%; }
+            .partLnk { width: 100px; }
+            .partActive { width: 100px; }
+            #wc { width: 350px; margin: 0 auto; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function(){
-
             $("#tbl :radio").click(function () {
                 $("#wc").css($(this).attr("name"), $(this).val());
             });
@@ -36,6 +46,10 @@
             $("#fontSize").change(function () {
                 $("#wc").css($(this).attr("name"), $(this).val());
             });
+            /*$(".fontFamily").change(function() {
+                $("#wc").css($(this).attr("name"), $(this).val());
+            });*/
+            // $("#tbl :checkbox").change(function () { $("#wc").css($(this).attr("name"), this.checked ? $(this).val() : ""); });
             $("#reset").click(function () {
                 $("p").css("font-family", "sans-serif");
                 $("p").css("font-size", "100%");
@@ -49,7 +63,6 @@
         <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
         <div class="hdv"><h2>Objects <span class="smhide"><br></span>& Events</h2></div>
-        <br>
     </header>
     <nav id="clsnav">
         <a href="hw2.html">Homework 2</a>
@@ -61,11 +74,12 @@
         <a href="hw8.html">Homework 8</a>
     </nav><br>
     <!-- <div class="main" id="main"> -->
-        <a href="hw7.html" class="partActive" >Homework 7</a>
-        <!-- <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br> -->
-        <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><h3>Part 1: Formatting Options</h3>
+        <a href="hw7.html" class="partLnk" >Homework 7 <br>Main</a>
+        <a href="hw7p1.html" class="partActive" >Part 1<br>Formatting<span class="smhide"> Options</span></a>
+        <a href="hw7p2.html" class="partLnk">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br><br>
+        <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><h3>Part 1: Formatting Options</h3><br>
         <form name="myform">
-            <label>Select from the following options to change the properties of the paragraph below.</label>
+            <label>Select from the following options to change the properties of the paragraph below.</label><br>
             <table id="tbl">
                 <tr>
                     <th>Color</th>
@@ -75,7 +89,7 @@
                 <tr>
                     <td><label><input type="radio" name="background-color" id="teal" value="#D4F0F1"> Teal &nbsp;</label><br><br>
                     <label><input type="radio" name="background-color" id="pink" value="#FFE5E2"> Pink &nbsp;</label><br><br>
-                    <label><input type="radio" name="background-color" id="white" value="#FFFFFF"> White &nbsp;</label><br><br>
+                    <label><input type="radio" name="background-color" id="white" value="white"> White &nbsp;</label><br><br>
                     <label><input type="radio" name="background-color" id="dft" value="#F5FCFD"> Default &nbsp;</label></td>
                     <td >
                         <select name="font-size" id="fontSize" size="6">
@@ -90,7 +104,8 @@
                     <td>
                         <input type="button" name="font-family" value="Delius" id="dls" class="fontFamily"><br><br>
                         <input type="button" name="font-family" value="Grand Hotel" id="ght" class="fontFamily"><br><br>
-                        <input type="reset" name="reset" value="Reset all" id="reset" style="color: FFFFFF;">
+                        <input type="button" name="font-family" value="Sans-serif" class="fontFamily" style="font-size: .9em;"><br><br>
+                        <input type="reset" name="reset" value="Reset all" id="reset" style="color: #FFFFFF;">
                         <!-- <button type="button" id="reset">Reset</button> -->
                     </td>
                 </tr>
@@ -103,10 +118,10 @@
                 whatever the cost may be. <br>
                 We shall fight on the beaches, <br>
                 We shall fight on the landing grounds, <br>
-                We shall fight in the fields and in the streets, <br>
-                we shall fight in the hills;<br>
-                We shall never surrender"<br>
-                &nbsp; — Winston Churchill, June 4, 1940</p>
+                We shall fight in the fields <br>and in the streets, <br>
+                We shall fight in the hills;<br>
+                We shall never surrender."<br>
+                &nbsp; — Winston Churchill, June 4, 1940</p><br><br>
         </form>
 </body>
 </html>

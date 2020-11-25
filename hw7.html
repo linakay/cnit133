@@ -8,27 +8,37 @@
     <link rel="stylesheet" href="css/hw.css">
     <style>
         * { margin: 0 auto; padding: 0; }
-        header { width: 110vw; }
+        nav { padding: 0.5% 1%; }
+        header { width: 100vw; }
         header a { color: #FFFFFF; }
-        .hdvm { width: 70%; }
-        .hdv { width: 12%; }
-        .partLnk { width: 150px; }
-        .partActive { width: 150px; }
-        .wrp { width: 40vw; display: inline-block; vertical-align: top; }
+        .hdvm { width: 70%; height: 70px; }
+        .hdv { width: 12%; height: 70px; }
+        .hdv:first-child { float: left; margin-left: 5px; }
+        .hdv:last-child { margin-right: 5px; line-height: 70px; text-align: center; }
+        .partLnk { width: 160px; }
+        .partActive { width: 160px; }
+        .wrp { width: 39vw; display: inline-block; vertical-align: top; }
+        .main { text-align: center; width: 100%; }
         h3 {
-        width: 100%;
-            text-align: left;
+            width: 100px;
+            margin: 0 auto;
             color: #003459;
             background: #A2E4B8;
             background: rgba(145, 220, 232, 1);
-            font-size: 1.1em;
+            font-size: 1.4em;
             white-space: nowrap;
-            background: url(add.svg) no-repeat 0 10px;
-            padding: 10px 0 0 25px;
+            background: url(add.svg) no-repeat 5px 10px;
+            padding: 10px 0 0 10px;
             cursor: pointer;
         }
         h3.close {
             background-image: url(clear.svg);
+        }
+        @media screen and (max-width: 700px) {
+            p { font-size: 1em; text-align: center; }
+            .wrp { width: 49vw; }
+            .partLnk { width: 140px; }
+            .partActive { width: 140px; }
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -53,8 +63,7 @@
     <header>
         <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
-        <div class="hdv" style="text-align: right;"><h2>Objects & Events</h2></div>
-        <br>
+        <div class="hdv"><h2>Objects <span class="smhide"><br></span>& Events</h2></div>
     </header>
     <nav id="clsnav">
         <a href="hw2.html">Homework 2</a>
@@ -65,7 +74,8 @@
         <a class="active" href="hw7.html">Homework 7</a>
         <a href="hw8.html">Homework 8</a>
     </nav><br>
-    <br><h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><br>
+    <br><h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2><br><br>
+    <p>Click on the plus icons below to expand each assignment title and description.</p><br><br>
     <div class="wrp">
         <div class="main">
             <h3>Part 1</h3>

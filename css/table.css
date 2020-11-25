@@ -1,8 +1,10 @@
 table{
     border: 1px solid #00859B;
     border-spacing: 0;
+    width: 90vw;
+    max-width: 400px;
+    white-space: nowrap;
     margin: 0 auto;
-    width: 400px;
 }
 table th{
     height: 30px;
@@ -18,18 +20,16 @@ table td{
     background: rgba(208, 211, 212, .25);
     border: 1px solid #FFF;
     text-align: right;
-    width: 125px;
+    width: 75px;
 }
-td:last-child{
-    width: 125px;
-}
-td:first-child{
-    text-align: left;
-    padding-left: 1%;
-    width: 50%;
-    min-width: 150px;
-}
+td:first-child { width: 100px; }
 input{
     text-align: center;
     /*box-sizing: border-box;*/
+}
+@media screen and (max-width: 799px) {
+    /*table { width: 300px; }
+    td{ width: 75px; }
+    td:first-child{ width: 125px; }*/
+    header { width: 115vw; }
 }

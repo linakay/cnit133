@@ -29,9 +29,7 @@ h1{
     text-align: center;
     color: #003459;
 }
-a{
-    text-decoration: none;
-}
+a{ text-decoration: none; }
 ul { list-style: none; }
 nav{
     width: 100vw;
@@ -43,20 +41,22 @@ nav{
     font-weight: 100;
     background: rgba(145, 220, 232, 0.5);
 }
-nav li { display: inline-block; margin-right: 1%; }
-nav li ul { position: absolute; display: none; width: inherit; }
-/*nav li:hover ul { display: block; }*/
-nav li ul li { display: block; }
 nav a{
+    font-weight: 300;
     color: #007EA7; background: #FFFFFF;
     border: 0.5px solid #007EA7;
     text-align: center;
-    padding: 3%;
+    padding: 5%;
     display: inline-block;
-    width: 12vw;
+    width: 14vw;
     /*min-width: 50px;*/
     margin: 0 auto;
 }
+/*nav ul { margin-left: -2vw; }*/
+nav li { display: inline-block; }
+nav li ul { position: absolute; display: none; width: inherit; }
+/*nav li:hover ul { display: block; }*/
+nav li ul li { display: block; width: inherit; }
 nav a:hover{
     color: #FFFFFF; background: #98DBCE;
     border: 0.5px solid #007EA7;
@@ -126,9 +126,6 @@ label{
     margin: 1% auto;
     display: inline-block;
 }
-.wht{
-    filter: invert(99%) sepia(2%) saturate(1508%) hue-rotate(264deg) brightness(116%) contrast(100%);
-}
 .container {
   text-align: left;
   padding: 0%;
@@ -157,7 +154,7 @@ label{
         /*max-width: 20px;*/
         /*display: none;*/
     }
-    nav li { margin: 0 auto; }
+    nav a { width: 13vw; margin: 0 auto; }
     /*nav li ul { display: inline-block; }*/
     h2{
         font-size: 1.25em;
@@ -173,10 +170,7 @@ label{
     }
     .smhide { display: none; }
     .smshow { display: inline-block; }
-    button{
-        font-size: .95em;
-        width: 22vw;
-    }
+    /*button{ font-size: .95em; width: 22vw; }*/
     p { text-align: justify; }
     figure { float: right; }
 }

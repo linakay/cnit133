@@ -13,6 +13,7 @@
         td:first-child { text-align: left; }
     </style>
     <link rel="stylesheet" href="css/hw5.css">
+    <link rel="stylesheet" href="css/hw.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
@@ -41,7 +42,7 @@
 <body>
     <header>
         <div class="hdv"><a href="index.html" style="color: #FFFFFF; line-height: 80%;"><figure><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a></div>
-        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
         <div class="hdv"><h2>Arrays</h2></div>
         <br>
     </header>
@@ -61,7 +62,8 @@
     <h2>Homework 5 Arrays — Part 1: Form Validation</h2>
     <h3>Build your own sandwich!</h3>
     Please select your order options below. <span class="rq">*</span>Asterisks indicate required fields.<br><br>
-    <form method="post" action="orders.html" id="myform" name="myform">
+    <!-- <form method="post" action="orders.html" id="myform" name="myform"> -->
+    <form method="post" action="orders.php" id="myform" name="myform">
         Customer name<span class="rq">* </span> &nbsp;<input type="text" name="name" id="name" size="25" class="required" autofocus><br><br>
         <table>
             <tr>
@@ -83,12 +85,16 @@
                 <td> --><input type="radio" name="meat"><label> Vegetarian</label><br></td>
             </tr>
             <tr>
-                <td>Cheese<span class="rq">*</span>&nbsp;</td>
-                <td><input type="checkbox" id="cheddar" name="cheddar" value="cheddar" class="required"><label> Cheddar &nbsp;</label>
+                <td>Cheese &nbsp;</td>
+                <td><input type="checkbox" id="cheddar" name="chs" value="cheddar"><label> Cheddar &nbsp;</label>
+                    <input type="checkbox" id="brie" name="chs" value="brie"><label> Brie &nbsp;</label>
+                    <input type="checkbox" id="swiss" name="chs" value="swiss"><label> Swiss &nbsp;</label>
+                    <input type="checkbox" id="nochs" name="chs" value="nochs"><label> None</label><br></td>
+                <!-- <td><input type="checkbox" id="cheddar" name="cheddar" value="cheddar" ><label> Cheddar &nbsp;</label>
                     <input type="checkbox" id="brie" name="brie" value="brie"><label> Brie &nbsp;</label>
                     <input type="checkbox" id="swiss" name="swiss" value="swiss"><label> Swiss &nbsp;</label>
                     <input type="checkbox" id="nochs" name="nochs" value="nochs"><label> None</label><br></td>
-            </tr>
+            </tr> -->
         </table><br>
         <input type="submit" name="submit" id="submit" value="Submit">
     </form><br>

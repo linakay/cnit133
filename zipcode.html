@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style type="text/css">
+        *{
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 1.05em;
+            text-align: center;
+        }
+        h2 { font-size: 1.4em; }
+        .body { width: 600px; margin: 0 auto; }
+        img { width: 20%; height: auto; }
+        label { float: left; }
+        input { text-align: center; margin: 0 auto; }
+        input[type$="text"] { float: right; text-align: left; }
+        input[type$="submit"], input[type$="reset"] { width: 90px; padding: 5px 10px; background: #3ABBCA; color: #FFF; font-size: 1.05em; border: .5px solid #E4E6E8; border-radius: 5px; }
+        #zip{ text-align: center; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        function getPlace(zip) {
+            var ajaxRequest;
+            try { ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+                try { ajaxRequest = new ActiveXObject("Msxm12.XMLHTTP");
+                } catch (e) {
+                    try { ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("Your browswer broke!");
+                        return false;
+                    }
+                }
+            }
+            ajaxRequest.onreadystatechange = function() {
+                if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
+                    var result = ajaxRequest.responseText;
+                    var place = result.split(', ');
+                    if (document.getElementById("city").value == "")
+                        document.getElementById("city").value = place[0];
+                    if (document.getElementById("state").value == "")
+                        document.getElementById("state").value = place[1];
+                }
+            }
+            ajaxRequest.open("GET", "getCityState.php?zip=" + zip);
+            ajaxRequest.send(null);
+        }
+        function Validate() {
+            var msg = "zip code error\nemail not opened";
+                var msg1 = "name or address cannot be blank\nemail not opened";
+                var name1 = document.forms["myForm"].elements["name"].value;
+                var addr1 = document.forms["myForm"].elements["street"].value;
+            var zip1 = document.forms["myForm"].elements["city"].value;
+            if (zip1 == "zip code error") {           
+                alert (msg);
+                document.forms["myForm"].elements["city"].value = "";
+                document.forms["myForm"].elements["state"].value = "";
+                document.forms["myForm"].elements["zip"].value = "";
+                document.forms["myForm"].elements["zip"].focus();
+                return false;
+            }
+            if (name1 == "" || addr1 == "") {
+                alert (msg1);
+                return false;
+            }
+        }
+    </script>
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+</head>
+<body>
+<section class="body">
+<img src="hm.png" alt="home"><h2>Welcome to the Booster Club Sales</h2>
+<form id="myForm" name="myForm" action="mailto:lkay@ccsf.edu" method="post" enctype="text/plain">
+    <label for="zip">Zip Code:</label>
+    <input type="text" onblur="getPlace(this.value)" name="zip" id="zip" size="10" autofocus><br><br>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" size="30" readonly="readonly"><br><br>
+    <label for="state">State:</label>
+    <input type="text" name="state" id="state" size="30" readonly="readonly"><br><br>
+    <label for="name">Buyer's Name:</label>
+    <input type="text" name="name" id="name" size="30"><br><br>
+    <label for="street">Street Address:</label>
+    <input type="text" name="street" id="street" size="30"><br><br>
+    <label for="date_requested">Date Requested:</label>
+    <input type="text" id="datepicker" name="date_requested" value="click here" size="30"><br><br>
+  <!-- <table>
+    <tr>
+      <td>Zip Code:</td>
+      <td><input type="text" onblur="getPlace(this.value)" name="zip" size="10" autofocus></td>
+      <td rowspan="6"><img src="hm.png" alt="home"></td>
+    </tr>
+    <tr>
+      <td>City:</td>
+      <td><input type="text" name="city" id="city" size="30" readonly="readonly"></td>
+    </tr>
+    <tr>
+      <td>State:</td>
+      <td><input type="text" name="state" id="state" size="30" readonly="readonly"></td>
+    </tr>
+    <tr>
+      <td>Buyer's Name:</td>
+      <td><input type="text" name="name" size="30"></td>
+    </tr>
+    <tr>
+      <td>Street Address:</td>
+      <td><input type="text" name="street" size="30"></td>
+    </tr>
+    <tr>
+      <td>Date Requested:</td>
+      <td><input type="text" id="datepicker" name="date_requested" value="click here" size="30"></td>
+    </tr>
+  </table> -->
+  <p><input type="submit" value="Submit" onclick="return Validate(this.form)">
+  <input type="reset" value="Clear" onClick="window.location.reload();"></p>
+</form>
+</section>
+</body>
+</html>

@@ -3,20 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="CNIT133 Homework 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="hm.png">
+    <link rel="shortcut icon" href="hmsm.png">
     <title>Homework 8</title>
     <link rel="stylesheet" href="css/hw.css">
-<script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
+    <style>
+        * { text-align: center; }
+        nav { height: 100vh; }
+        body { margin: 0 auto; padding: 0; }
+        .hdvm { width: 80%; }
+        .hdv { width: 10%; margin-left: 5px; margin-right: 5px; text-align: center;}
+        .hdv:last-child { line-height: 70px; text-align: center; }
+        nav a { margin-top: 10px; }
+        p { font-size: 1.1em; text-align: justify; }
+        .lbl { font-size: 1em; text-align: center; }
+        form { font-size: 1.1em; }
+        input[type='text'] {
+            text-align: center;
+            vertical-align: middle;
+            height: 1.1em;
+            font-size: 1.05em;
+            width: 175px;
+            margin: 15px;
+            padding: 5px;
+        }
+        h3 a, p a { color: #05A9C7; }
+        h3 a:visited, p a:visited { color: #007EA7; }
+        .wrapper { width: 75%; min-width: 360px; margin: 1% auto; padding: 1%; border: 1px solid #C4C6C8; }
+        .cd { font-family: Courier, monospace; }
+        #report { width: 90%; min-width: 350px; margin: 0 auto; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "<br>";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "gethint.php?q="+str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
-
-        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
-        
-        <div class="hdv"></div>
-        <br>
+        <div class="hdv">
+            <a href="index.html" style="color: #FFFFFF; line-height: 80%;">
+                <figure>
+                    <img src="hmvb.svg">
+                    <figcaption>Lina Kay</figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="hdvm"><h1>
+                <a href="index.html" style="background: none;">CNIT 133 Homework</a>
+            </h1></div>
+        <div class="hdv"><h1 style="color: #FFF;">AJAX </h1></div>
     </header>
-    <nav>
+    <nav class="smhide">
         <a href="hw2.html">Homework 2</a>
         <a href="hw3.html">Homework 3</a>
         <a href="hw4.html">Homework 4</a>
@@ -25,9 +79,30 @@
         <a href="hw7.html">Homework 7</a>
         <a class="active" href="hw8.html">Homework 8</a>
     </nav>
-    <br>
-    <main>
-        <p>Coming soon!</p>
-    </main>
+    <br><h2>CNIT 133 Homework 8 – AJAX Applications</h2>
+    <div class="wrapper">
+            <span class="lbl"> Start typing a name to see suggestions below.</span><br>
+        <form>
+             <!-- Start typing a name to see suggestions from a list below.<br> -->
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)" autofocus><br>
+        Suggestions: <span id="txtHint"><br></span><br>
+        </form>
+    </div><br>
+    <div class="wrapper">
+        <h3>REST – <a href="https://pokeapi.co/docs/v2.html">PokéAPI</a> (Documentation page)</h3>
+        <div id="report">
+            <p>The Pokemon API provides access to an official database of Pokemon, abilities, in-game items, events, and other elements that are useful for developers. The API itself only allows access to the HTTP GET method. You cannot add, delete, or otherwise alter the database without administrative privileges. However, PokéAPI is totally open and free for anyone interested in creating a Pokemon app or program to use without an API key.</p>
+            <p>There are a variety of resources available through the PokéAPI, which can be used to create a program. A typical request is written <span class="cd">GET/api/v2/{endpoint}/</span>. This will return a JSON file. If the endpoint is the name of a type of resource, the API returns the items in that resource's list. Specifying a name or id as the endpoint will return relevant information and attributes about the requested item.</p>
+            <p>You can add optional paramaters to the request following a question mark. <span class="cd">?limit=40</span> will display 40 results matching your query on each page. Appending an offset to this parameter separated by an ampersand (&amp;) <span class="cd">&offset=40</span> will advance to the next set of results.</p>
+            <p>Try the PokéAPI out for yourself at <a href="https://pokeapi.co/">https://pokeapi.co/</a>.</p>
+        </div>
+    </div><br>
+    <div class="wrapper">
+        <div>
+            <h3><a href="https://hills.ccsf.edu/~lkay/cnit133/hw8b.html">Google Geocoding API Search Application</a></h3><br>
+            <p>This is an extra non-credit project I completed to demonstrate the use of APIs for my classmates. The search box accepts input from the user and retrieves information on a geographic location or landmark from the Google Geocoding API.</p>
+        </div>
+    </div>
 </body>
 </html>

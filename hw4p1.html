@@ -43,6 +43,55 @@
         $( function() {
             $( "#draggable" ).draggable();
         } );
+        function cnum(x){
+    var x;
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function forx() {
+    var sum, prod;
+    sum=0;
+    prod=1;
+    for (var i=5; i<=21;){
+        sum+=i;
+        prod*=i;
+        i+=4;
+        // console.log(sum, i);
+    }
+    prod = cnum(prod);
+    document.getElementById('tot').innerHTML="The sum of every fourth integer from 5 through 21 inclusive is "+sum+".";
+    document.getElementById('mult').innerHTML="The product of every fourth integer from 5 through 21 is "+prod+".";
+    var x;
+    x=document.getElementById('draggable');
+    x.style.display="block";
+    return prod;
+}
+function frst() {
+    var x;
+    x=document.getElementById('draggable');
+    x.style.display="none";
+    document.getElementById('tot').innerHTML="<br>";
+    document.getElementById('mult').innerHTML="<br>";
+}
+function wrst() {
+    document.getElementById('tot2').innerHTML="<br>";
+    document.getElementById('mult2').innerHTML="<br>";
+}
+function whx() {
+    var sum, prod, i;
+    sum=0;
+    prod=1;
+    i=3;
+    while (i<=21){
+        sum+=i;
+        prod*=i;
+        i+=3;
+        // console.log(i, sum, prod);
+    }
+    prod = cnum(prod);
+    document.getElementById('tot2').innerHTML="The sum of every third integer from 3 through 21 inclusive is "+sum+".";
+    document.getElementById('mult2').innerHTML="The product of every third integer from 3 through 21 is "+prod+".";
+    return prod;
+}
     </script>
     <script src="js/hw4p1.js"></script>
     <script src="https://kit.fontawesome.com/bcf8df71a0.js" crossorigin="anonymous"></script>
@@ -51,7 +100,7 @@
     <header>
         <div class="hdv" style="text-align: left;"><h2><a href="index.html" style="color: #FFF"><i class="fas fa-home"></i> Lina Kay</a></h2></div>
         <!-- <div class="hdv" style="text-align: left; vertical-align: middle;"><a href="index.html" style="color: #FFF;"><img src="home.svg" style="width: 10%;"></a></div> -->
-        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
+        <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
         <div class="hdv"><h2 style="color: #FFF; text-align: right;">Looping Statements</h2></div>
         <br>
     </header>
@@ -75,7 +124,7 @@
     <button onclick="forx()" tabindex="1">for loop</button> 
     <button onclick="frst()" tabindex="2">reset</button><br><br>
     <div id="draggable">
-        <h3 style="margin: 0% auto; color: #FFF;">Drag me anywhere on the page!</h3>
+        <h3 style="margin: 0% auto; color: #FFF;" class="smhide">Drag me anywhere on the page!</h3>
         <span id="tot"><br></span><br>
         <span id="mult"><br></span><br>
     </div><br><br>

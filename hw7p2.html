@@ -7,11 +7,16 @@
     <title>Homework 7</title>
     <link rel="stylesheet" href="css/hw7p2.css">
     <style>
+        * { margin: 0 auto; padding: 0; }
+        header { height: 70px; }
         header a { color: #FFFFFF; }
         /*header img { width: 75%; height: auto; }*/
         .hdvm { width: 78%; }
         .hdv { width: 12%; }
-        nav {white-space: nowrap;}
+        .hdv:first-child { line-height: 70%; }
+        .hdv:last-child { height: 70px; line-height: 70px; text-align: center }
+        nav { white-space: nowrap; }
+        nav ul { list-style: none; /*margin-left: -10px;*/ }
         nav ul li ul.fallback {display:none;}
         nav ul li:hover ul.fallback {display:block;}
     </style>
@@ -41,13 +46,13 @@
 </head>
 <body>
     <header>
-        <div class="hdv"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
+        <div class="hdv" style="float: left;"><a href="index.html"><figure> <img src="hmvb.svg"><figcaption>Lina Kay </figcaption></figure></a></div>
         <div class="hdvm"><h1><a href="index.html">CNIT 133 Homework</a></h1></div>
-        <div class="hdv"><h2>Objects <span class="smhide"><br></span>& Events</h2></div>
-        <br>
+        <div class="hdv"><h2>Objects & Events</h2></div>
     </header>
     <nav id="clsnav">
         <ul>
+            <li><a href="index.html">HW 1</a></li>
             <li><a href="hw2.html">HW 2</a>
                 <!-- <ul class="fallback"> -->
                 <ul>
@@ -86,13 +91,17 @@
                     <li><a href="hw6p3.html">P<span class="smhide">art</span> 3</a></li>
                 </ul>
             </li>
-            <li><a class="active" href="hw7.html">HW 7</a></li>
-            <li><a href="hw8.html">HW 8</a></li>
+            <li><a class="active" href="hw7.html">HW 7</a>
+                <ul>
+                    <li><a href="hw7p1.html">P<span class="smhide">art</span> 1</a></li>
+                    <li><a href="hw7p2.html">P<span class="smhide">art</span> 2</a></li>
+                </ul>
+            </li>
         </ul>
-    </nav><br>
+    </nav><br><br>
     <br> <h2 style="color: #003459;">CNIT 133 Homework 7 – Object Model and Event Model</h2>
     <h3 style="color: #003459;">Part 2: Dropdown Menus</h3><br><br>
-    <a href="hw7p1.html" class="partActive">Part 1<br>Options</a>
+    <a href="hw7p1.html" class="partActive">Part 1<br>Formatting<span class="smhide"> Options</span></a>
     <a href="hw7p2.html" class="partActive">Part 2<br><span class="smhide">Dropdown </span>Menus</a><br>
 </body>
 </html>

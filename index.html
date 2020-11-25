@@ -2,19 +2,30 @@
 <html lang = "en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CNIT133 Homework 2">
+    <meta name="description" content="CNIT133 Homework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homework</title>
     <link rel="stylesheet" href="css/hw.css">
+    <style>
+        * { margin: 0 auto; /*text-align: center;*/ }
+        .hdv { width: 10%; min-width: 40px; }
+        .hdvm { width: 90%; min-width: 335px; display: inline-block; font-size: 1.25em; }
+        nav { margin-right: 1%; }
+        p { margin-right: 2%; line-height: 125%; }
+        @media screen and (max-width: 500px) {
+            header { padding: 2%; }
+            .hdvm { display: inline-block; font-size: 1em; }
+            #smhide { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <header style="vertical-align: middle;">
+    <header>
         <div class="hdv">
-            <a href="index.html" style="color: #FFF; line-height: 80%;"><figure style="float: right; width: auto;"><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a>
+            <a href="index.html" style="color: #FFF; line-height: 80%; float: right;"><figure style=""><img src="hmvb.svg"><figcaption>Lina Kay</figcaption></figure></a>
         </div>
-        <div class="hdvm"><h1><a href="index.html" style="color: #003459; background: none;">CNIT 133 Homework</a></h1></div>
-        
-        <div class="hdv"></div>
-        <br>
+        <div class="hdvm"><h1><a href="index.html" >CNIT 133 <span id="smhide"> Homework </span> </a></h1></div>
+        <!-- <div class="hdv"></div> -->
     </header>
     <nav>
         <a href="hw2.html">Homework 2</a>
@@ -24,8 +35,7 @@
         <a href="hw6.html">Homework 6</a>
         <a href="hw7.html">Homework 7</a>
         <a href="hw8.html">Homework 8</a>
-    </nav>
-    <br>
-    <p style="text-align: center;">This is the homepage for Lina Kay's JavaScript homework assignments. Welcome!</p>
+    </nav><br>
+    <p>This is the homepage for Lina Kay's JavaScript homework assignments. Welcome!</p>
 </body>
 </html>

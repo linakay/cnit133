@@ -7,7 +7,7 @@ function find() {
     org=org.toLowerCase();
     // var mywin = window.open("", "MsgWindow", "width=300,height=100");
     if (key.length!=1 || org.length<1) {
-        var mywin = window.open("", "MsgWindow", "width=300,height=100");
+        var mywin = window.open("", "MsgWindow", "top=500,left=500,width=300,height=100");
         document.forms['myform'].elements['output'].value="";
         mywin.document.write('<p>Please enter a single character for the key and a string for the search text.</p>');
     }
@@ -26,7 +26,7 @@ function find() {
         }
         else {
             document.forms['myform'].elements['output'].value="";
-            var mywin = window.open("", "MsgWindow", "width=300,height=100");
+            var mywin = window.open("", "MsgWindow", "top=750,left=900,width=300,height=100");
             var err = "<p>" + "Search character " + "\"" + orgkey + "\"" + " not found in text string!</p>";
             // mywin.document.write('<p>Search character not found in text string!</p>');
             mywin.document.write(err);
